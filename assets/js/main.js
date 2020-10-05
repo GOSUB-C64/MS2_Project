@@ -14,7 +14,7 @@ $(window).resize(function () {
 });
 
 let tileId, tileColor, tileIdString;
-let tileSeq = []; // holds next tile in
+
 let answerSeq = []; // holds users guess for comparison later
 let tileColorSeq = []; // store colours of tiles
 var gameCount = 3; /* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user is successful */
@@ -22,26 +22,26 @@ var isClickEnabled = false;
 var noOfClicks = 0;
 var index = 0;
 
-// pick random number between 1 and 16 (inclusive) to represent a single tile within the 4x4 grid.
-function pickTile() {
-  var tile = Math.floor(Math.random() * 16) + 1;
-  // build tileSeq array to hold pattern
-  if (tileSeq.length > 0) {
-    for (let i = 0; tileSeq.length; i++) {
-      if (tileSeq[i] === tileSeq[i - 1]) {
-        console.log("***");
-        pickTile();
-      } else {
-        tileSeq.push(tile); /* add to array */
-      }
-    }
-    tileSeq.push(tile); /* add to array */
 
-    return tile;
+
+
+// generate array 16 non-repeatable random nos (1-16) representing the 4x4 grid
+function generateTileArray() {
+
+  let tileSeq = [];
+
+  while (tileSeq.length < 16) {
+    let tile = Math.floor(Math.random() * 16) + 1;
+
+    if (!tileSeq.includes(tile)) {
+      tileSeq.push(tile);
+    }
   }
+  console.log(tileSeq);
 }
+
 // assign each tile (div) its own color
-function getColour(nextTile) {
+function getColour([]) {
   var nextColour = nextTile;
   var colourMap = {
     1: "Red",
@@ -94,8 +94,8 @@ function displayCurrentSeq(tileSeq, x) {
 }
 
 function blinkTile() {
-  tileId = pickTile(); // get a number between 1/16 inc
-  tileColor = getColour(tileId);
+  generateTileArray();
+  tileColor = getColour(tileSeq);
   tileColorSeq.push(tileColor);
   displayColouredTile(tileId, tileColor);
   //////
