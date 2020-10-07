@@ -22,12 +22,8 @@ var isClickEnabled = false;
 var noOfClicks = 0;
 var index = 0;
 
-
-
-
 // generate array 16 non-repeatable random nos (1-16) representing the 4x4 grid
 function generateTileArray() {
-
   let tileSeq = [];
 
   while (tileSeq.length < 16) {
@@ -42,7 +38,7 @@ function generateTileArray() {
 
 // assign each tile (div) its own color
 function getColour([]) {
-  var nextColour = nextTile;
+  let nextColour;
   var colourMap = {
     1: "Red",
     2: "Green",
@@ -61,7 +57,13 @@ function getColour([]) {
     15: "GoldenRod",
     16: "IndianRed",
   };
-  return colourMap[nextColour];
+  let x = 0;
+  while (tileColorSeq.length < 16) {
+    nextColour = tileSeq[x];
+    tileColorSeq.push(colourMap[nextColour]);
+    x++;
+  }
+  console.log(tileColorSeq);
 }
 // display on screen and save current tile to 'currentTile'
 function displayColouredTile(nextTile, colour) {
@@ -93,12 +95,12 @@ function displayCurrentSeq(tileSeq, x) {
   return;
 }
 
+
 function blinkTile() {
   generateTileArray();
   tileColor = getColour(tileSeq);
   tileColorSeq.push(tileColor);
   displayColouredTile(tileId, tileColor);
-  //////
   var intervalID = setInterval(() => {
     $("#tile" + tileId).css("background-color", "#000");
     if (tileSeq.length < gameCount) {
