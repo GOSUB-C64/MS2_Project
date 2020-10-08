@@ -22,11 +22,11 @@ var isClickEnabled = false;
 var noOfClicks = 0;
 var index = 0;
 
-// generate array 16 non-repeatable random nos (1-16) representing the 4x4 grid
+// generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
   let tileSeq = [];
   while (tileSeq.length < 16) {
-    let tile = Math.floor(Math.random() * 16) + 1;
+    let tile = Math.floor(Math.random() * 16);
 
     if (!tileSeq.includes(tile)) {
       tileSeq.push(tile);
