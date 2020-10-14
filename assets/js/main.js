@@ -78,15 +78,12 @@ function displayColouredTile(x) {
   return Id;
 }
 
-function displayGuess(tile){
-    Id = "#tile" + tile;
-    let a = tileSeq.indexOf(tile);
-    $(Id).css("background-color", tileColorSeq[a]);
-    debugger;
+function displayGuess(tile) {
+  Id = "#tile" + tile;
+  let a = tileSeq.indexOf(tile);
+  $(Id).css("background-color", tileColorSeq[a]);
+  debugger;
 }
-
-
-
 
 // function displayCurrentSeq(tileSeq, x) {
 //   isClickEnabled = false;
@@ -176,7 +173,7 @@ $(".tile").click(function () {
   }
   console.log("NUMBER OF CLICKS = ", noOfClicks);
 
-  // if currently clicked tile doesnt equal the one in the array then stop and game over
+  // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
   if (tileId !== tileSeq[runningIndex]) {
     console.log("yours = ", tileId, "cpu's = ", tileSeq[runningIndex]);
     alert("! GAME OVER !");
@@ -190,7 +187,10 @@ $(".tile").click(function () {
     // displayCurrentSeq(tileSeq);
 
     // ok then continue
-  } else {
-    index++;
+  }
+  if (tileId === tileSeq[runningIndex]) {
+    // index++
+    runningIndex++;
+    console.log("I JUST GOT EXECUTED!!!");
   }
 });
