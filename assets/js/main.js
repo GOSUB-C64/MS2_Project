@@ -20,6 +20,7 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
+let clickSound = loadSound("assets/sounds/error.wav");
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
@@ -156,6 +157,8 @@ let intervalID = setInterval(() => {
 console.log("clicks(outside) = ", noOfClicks);
 if (noOfClicks === gameCount) {
   console.log("FINAL TEST");
+  // play user click sound
+  clickSound.play();
   // Seq same
   if (JSON.stringify(tileSeq) === JSON.stringify(answerSeq)) {
     alert("WIn");
