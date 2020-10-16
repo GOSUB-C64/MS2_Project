@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Simon Squares</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -28,19 +28,40 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col">
           <h1 class="gameTitle">Simon Squares</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col"></div>
-        <div class="col">
-          <button id="start button">Start Game</button>
+      <div class="row justify-content-center">
+        <div class="col-4" id="tile sound"></div>
+        <div class="col-4 tileGrid">
+          <div class="tile clearTiles" id="tile0"></div>
+          <div class="tile clearTiles" id="tile1"></div>
+          <div class="tile clearTiles" id="tile2"></div>
+          <div class="tile clearTiles" id="tile3"></div>
+          <div class="tile clearTiles" id="tile4"></div>
+          <div class="tile clearTiles" id="tile5"></div>
+          <div class="tile clearTiles" id="tile6"></div>
+          <div class="tile clearTiles" id="tile7"></div>
+          <div class="tile clearTiles" id="tile8"></div>
+          <div class="tile clearTiles" id="tile9"></div>
+          <div class="tile clearTiles" id="tile10"></div>
+          <div class="tile clearTiles" id="tile11"></div>
+          <div class="tile clearTiles" id="tile12"></div>
+          <div class="tile clearTiles" id="tile13"></div>
+          <div class="tile clearTiles" id="tile14"></div>
+          <div class="tile clearTiles" id="tile15"></div>
         </div>
+        <div class="col-4"></div>
       </div>
     </div>
+    <button id="start button">Start Game</button>
   </body>
+  <!-- <script src="assets/js/test.js"></script> -->
+  <script src="assets/js/main.js"></script>
 </html>

@@ -13,6 +13,9 @@ $(window).resize(function () {
   responsiveGrid();
 });
 
+const playerClickSnd = new Audio("assets/sounds/hint.wav");
+const displaySeqSnd = new Audio("assets/sounds/pop.wav");
+
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
 let gameCount = 3; /* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user is successful */
@@ -20,7 +23,6 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
-let clickSound = loadSound("assets/sounds/error.wav");
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
@@ -117,6 +119,7 @@ function displayCurrentSeq() {
 function blinkTile() {
   if (x < gameCount) {
     let tileId = displayColouredTile();
+    displaySeqSnd.play();
     // index++;
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");
@@ -136,14 +139,20 @@ function acceptUserInput() {
 
 // ////////// Main Game Logic //////////
 
+let start = document.getElementById("start button");
+start.addEventListener("click", startGame());
+
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 let x = 0; // global used to access index's in arrays
 let max = 16; // target level to reach!
-let intervalID = setInterval(() => {
-  blinkTile();
-  clearInterval(intervalID);
-}, 2000);
+
+function startGame() {
+  let intervalID = setInterval(() => {
+    blinkTile();
+    clearInterval(intervalID);
+  }, 2000);
+}
 
 //
 //
@@ -157,8 +166,7 @@ let intervalID = setInterval(() => {
 console.log("clicks(outside) = ", noOfClicks);
 if (noOfClicks === gameCount) {
   console.log("FINAL TEST");
-  // play user click sound
-  clickSound.play();
+
   // Seq same
   if (JSON.stringify(tileSeq) === JSON.stringify(answerSeq)) {
     alert("WIn");
@@ -168,6 +176,7 @@ if (noOfClicks === gameCount) {
 $(".tile").click(function () {
   if (!isClickEnabled) return;
 
+  playerClickSnd.play();
   noOfClicks++;
   if (noOfClicks <= gameCount) {
     console.log("clicks = ", noOfClicks);
@@ -195,10 +204,9 @@ $(".tile").click(function () {
     alert("! GAME OVER !");
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
-
     console.log("! ! ! !   W I N N E R   ! ! ! !");
 
-// if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
+    // if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
   } else if (noOfClicks === gameCount) {
     noOfClicks = 0;
     gameCount++; // increment game level (add 1 more tile)
