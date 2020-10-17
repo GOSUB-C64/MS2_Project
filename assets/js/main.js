@@ -96,6 +96,7 @@ function displayGuess(tile) {
 }
 // function to display all cells up to gameCount //
 function displayCurrentSeq() {
+    displaySeqSnd.play();
   isClickEnabled = false;
   if (runningIndex < gameCount) {
     let tileId = "#tile" + tileSeq[runningIndex];
@@ -139,20 +140,19 @@ function acceptUserInput() {
 
 // ////////// Main Game Logic //////////
 
-let start = document.getElementById("start button");
-start.addEventListener("click", startGame());
+// let start = document.getElementById("start button");
+// start.addEventListener("click", startGame);
 
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 let x = 0; // global used to access index's in arrays
 let max = 16; // target level to reach!
 
-function startGame() {
   let intervalID = setInterval(() => {
     blinkTile();
     clearInterval(intervalID);
   }, 2000);
-}
+
 
 //
 //
