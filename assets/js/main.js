@@ -13,8 +13,8 @@ $(window).resize(function () {
   responsiveGrid();
 });
 
-const playerClickSnd = new Audio("assets/sounds/hint.wav");
-const displaySeqSnd = new Audio("assets/sounds/pop.wav");
+let playerClickSnd = new Audio("assets/sounds/hint.wav");
+let displaySeqSnd = new Audio("assets/sounds/pop.wav");
 
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
@@ -94,15 +94,17 @@ function displayGuess(tile) {
   $(Id).css("background-color", tileColorSeq[a]);
   //   debugger;
 }
+
+
+
 // function to display all cells up to gameCount //
 function displayCurrentSeq() {
-    displaySeqSnd.play();
   isClickEnabled = false;
   if (runningIndex < gameCount) {
     let tileId = "#tile" + tileSeq[runningIndex];
     let tileColour = tileColorSeq[runningIndex];
     $(tileId).css("background-color", tileColorSeq[runningIndex]);
-
+    displaySeqSnd.play(); // pop
     console.log("tile = ", tileId, "colour = ", tileColour);
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");
@@ -120,7 +122,7 @@ function displayCurrentSeq() {
 function blinkTile() {
   if (x < gameCount) {
     let tileId = displayColouredTile();
-    displaySeqSnd.play();
+    displaySeqSnd.play(); // pop
     // index++;
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");
@@ -140,8 +142,7 @@ function acceptUserInput() {
 
 // ////////// Main Game Logic //////////
 
-// let start = document.getElementById("start button");
-// start.addEventListener("click", startGame);
+
 
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
