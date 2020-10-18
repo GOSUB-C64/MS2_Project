@@ -71,6 +71,13 @@ function generateTileColourSeq(arr) {
   return colArr;
 }
 
+function clearAllTiles() {
+  for (let i = 0; i <= 15; i++) {
+    let Id = "#tile" + i;
+    $(Id).css("background-color", "#000");
+  }
+}
+
 function displayColouredTile() {
   let Id = "#tile" + tileSeq[x];
   $(Id).css("background-color", tileColorSeq[x]);
@@ -82,8 +89,6 @@ function displayColouredTile() {
   );
   console.log("displayColouredTile - index = ", index);
   console.log(tileSeq);
-  // debugger;
-
   return Id;
 }
 
@@ -92,10 +97,7 @@ function displayGuess(tile) {
   console.log("YOUR GUESS = ", Id);
   let a = tileSeq.indexOf(tile);
   $(Id).css("background-color", tileColorSeq[a]);
-  //   debugger;
 }
-
-
 
 // function to display all cells up to gameCount //
 function displayCurrentSeq() {
@@ -137,23 +139,21 @@ function blinkTile() {
 }
 
 function acceptUserInput() {
+  clearAllTiles();
   isClickEnabled = true;
 }
 
 // ////////// Main Game Logic //////////
-
-
 
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 let x = 0; // global used to access index's in arrays
 let max = 16; // target level to reach!
 
-  let intervalID = setInterval(() => {
-    blinkTile();
-    clearInterval(intervalID);
-  }, 2000);
-
+let intervalID = setInterval(() => {
+  blinkTile();
+  clearInterval(intervalID);
+}, 2000);
 
 //
 //
@@ -196,7 +196,7 @@ $(".tile").click(function () {
       $("#tile" + tileId).css("background-color", "#000");
 
       clearTimeout(intervalID);
-    }, 1000);
+    }, 500);
   }
 
   // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over

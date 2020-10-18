@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+
 * {
-  background-color: #55f;
+  background-color: rgb(85, 85, 255);
   margin: 0;
   padding: 0;
 }
@@ -7,24 +9,38 @@
 .gameTitle {
   text-align: center;
   padding: 30px;
-  color: #0ff;
-  font-size: 12em;
+  color: rgb(0, 183, 255);
+  font-size: 8em;
   letter-spacing: 5px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Krona One", sans-serif;
 }
 
 .gameTitle1 {
   text-align: center;
   padding: 30px;
-  color: #0ff;
+  color: rgb(0, 183, 255);
   font-size: 3em;
   letter-spacing: 5px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Krona One", sans-serif;
 }
 
-#start button {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 6em;
+.start {
+  text-align: center;
+}
+
+#start-button {
+  font-family: "Krona One", sans-serif;
+  color: rgb(0, 255, 234);
+  font-size: 3em;
+  background-color: rgb(85, 85, 255);
+
+  /* margin: 0 auto; */
+}
+#start-button:hover {
+  color: rgb(0, 183, 255);
+}
+.button {
+  padding: 20px;
 }
 
 .tileGrid {
