@@ -15,6 +15,7 @@ $(window).resize(function () {
 
 let playerClickSnd = new Audio("assets/sounds/hint.wav");
 let displaySeqSnd = new Audio("assets/sounds/pop.wav");
+let clickBtnSnd = new Audio("assets/sounds/ding.wav");
 
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
@@ -142,13 +143,20 @@ function acceptUserInput() {
   clearAllTiles();
   isClickEnabled = true;
 }
-
-// ////////// Main Game Logic //////////
-
+       //                                 //
+      //                                 //
+     /////////////////////////////////////
+    ///////// Main Game Logic ///////////
+   /////////////////////////////////////
+  //                                 //
+ //                                 //
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 let x = 0; // global used to access index's in arrays
 let max = 16; // target level to reach!
+
+clickBtnSnd.play();
+
 
 let intervalID = setInterval(() => {
   blinkTile();

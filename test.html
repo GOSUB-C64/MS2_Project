@@ -36,57 +36,42 @@
     ></script>
   </head>
 
-  <body class="backImage">
-    <div class="container-fluid">
+  <body>
+    <div class="container">
       <div class="row">
-        <div class="col">
-          <h1 class="gameTitle1">Simon Squares</h1>
-        </div>
-      </div>
-      <div class="row justify-content-center" id="tile sound">
-        <div class="col-4"></div>
-        <div class="col-4 tileGrid">
-        <!-- modal to ask user for name -->
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <!-- modal to ask user for name -->
           <div class="modal fade" id="myModal">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1>Simon Squares</h1>
-              </div>
-              <div class="modal-body">
-                <p>Please Enter Your Name..</p>
-              </div>
-              <div class="modal-footer">
-                <input
-                  class="button btn-primary"
-                  data-dismiss="modal"
-                  value="Close"
-                />
+            <div
+              class="modal-dialogue modal-sm modal-dialog-centered"
+              role="document"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4>Simon Squares</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Please Enter Your Name..</p>
+                  <input class="form-control" />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-dismiss="modal"
+                  >
+                    OK
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div data-toggle="modal" data-target="#myModal"></div>
-          <!-- game grid -->
-          <div class="tile" id="tile0"></div>
-          <div class="tile" id="tile1"></div>
-          <div class="tile" id="tile2"></div>
-          <div class="tile" id="tile3"></div>
-          <div class="tile" id="tile4"></div>
-          <div class="tile" id="tile5"></div>
-          <div class="tile" id="tile6"></div>
-          <div class="tile" id="tile7"></div>
-          <div class="tile" id="tile8"></div>
-          <div class="tile" id="tile9"></div>
-          <div class="tile" id="tile10"></div>
-          <div class="tile" id="tile11"></div>
-          <div class="tile" id="tile12"></div>
-          <div class="tile" id="tile13"></div>
-          <div class="tile" id="tile14"></div>
-          <div class="tile" id="tile15"></div>
+          <div class="col-md-4"></div>
         </div>
-        <div class="col-4"></div>
+        <!-- <a href="#" data-toggle="modal" data-target="#myModal">Start Modal</a> -->
       </div>
     </div>
   </body>
-  <!-- <script src="assets/js/test.js"></script> -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/test.js"></script>
 </html>
