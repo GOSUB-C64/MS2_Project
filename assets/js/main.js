@@ -12,14 +12,15 @@ $(document).ready(function () {
 $(window).resize(function () {
   responsiveGrid();
 });
-
+// load sounds //
 let playerClickSnd = new Audio("assets/sounds/hint.wav");
 let displaySeqSnd = new Audio("assets/sounds/pop.wav");
 let clickBtnSnd = new Audio("assets/sounds/ding.wav");
+let gameOverSnd = new Audio("assets/sounds/Wah_Wah.wav");
 
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
-let gameCount = 3; /* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user is successful */
+let gameCount = 1; /* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user is successful */
 let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
@@ -153,9 +154,9 @@ function acceptUserInput() {
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 let x = 0; // global used to access index's in arrays
-let max = 16; // target level to reach!
+let max = 3; // target level to reach!
 
-clickBtnSnd.play();
+// clickBtnSnd.play();
 
 
 let intervalID = setInterval(() => {
@@ -210,10 +211,25 @@ $(".tile").click(function () {
   // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
   if (tileId !== tileSeq[runningIndex]) {
     console.log("yours = ", tileId, "cpu's = ", tileSeq[runningIndex]);
-    alert("! GAME OVER !");
+    let intervalID = setTimeout(()=> {
+        gameOverSnd.play();
+        clearTimeout(intervalID);
+        alert("! GAME OVER !");
+        blinkTile();
+    },1000);
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
     console.log("! ! ! !   W I N N E R   ! ! ! !");
+    alert("! ! ! !   W I N N E R   ! ! ! !");
+    noOfClicks = 0;
+    gameCount = 3;
+    index = 0;
+    runningIndex = 0;
+    tileSeq = [];
+    tileColorSeq = [];
+    tileIdString = "";
+    tileId = 0;
+    blinkTile();
 
     // if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
   } else if (noOfClicks === gameCount) {
