@@ -32,9 +32,10 @@
   position: relative;
 }
 
-/* #bk-img {
-  background-color: rgba(0, 0, 0, 0.75);
-} */
+.modal {
+    z-index:10;
+    position: relative;
+}
 
 .instructions {
   font-family: "Krona One", sans-serif;

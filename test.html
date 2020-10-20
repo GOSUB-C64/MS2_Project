@@ -39,37 +39,25 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-12">
           <!-- modal to ask user for name -->
           <div class="modal fade" id="myModal">
-            <div
-              class="modal-dialogue modal-sm modal-dialog-centered"
-              role="document"
-            >
+            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <h4>Simon Squares</h4>
                 </div>
                 <div class="modal-body">
-                  <p>Please Enter Your Name..</p>
-                  <input class="form-control" />
+                  <label for="userName">Please Enter Your Name</label>
+                  <input type="text" name="userName" class="form-control" id="getUserName" placeholder="name" value="" maxlength="20">
                 </div>
                 <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-dismiss="modal"
-                  >
-                    OK
-                  </button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="okButton">OK</button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4"></div>
         </div>
-        <!-- <a href="#" data-toggle="modal" data-target="#myModal">Start Modal</a> -->
       </div>
     </div>
   </body>

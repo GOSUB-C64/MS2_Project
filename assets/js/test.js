@@ -1,14 +1,19 @@
 $(document).ready(function () {
-    setTimeout(function(){
-        $("#myModal").modal('show');
-    },500);
+  setTimeout(function () {
+    $("#myModal").modal("show");
+  }, 500);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById('okButton')
+    .addEventListener("click", processUserName);
+});
 
-
-
-
-
+function processUserName() {
+  let userName = document.getElementById('getUserName').value;
+  console.log(userName);
+}
 
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // let arr1 = [];
