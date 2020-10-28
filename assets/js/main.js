@@ -20,7 +20,7 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
-let max = 3; // target level to reach!
+let max = 5; // target level to reach!
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
@@ -85,7 +85,7 @@ function displayGuess(tile) {
 // function to display all cells up to gameCount //
 function displayCurrentSeq() {
   isClickEnabled = false;
-  if (index < gameCount){
+  if (index < gameCount) {
     let tileId = "#tile" + tileSeq[index];
     let tileColour = tileColorSeq[index];
     $(tileId).css("background-color", tileColorSeq[index]);
@@ -97,7 +97,7 @@ function displayCurrentSeq() {
       clearInterval(intervalID);
     }, 1000);
   } else {
-    // runningIndex = 0; // reset index counter so appropriate checks can be made
+    index = 0;
     acceptUserInput();
   }
   return;
@@ -117,11 +117,9 @@ let intervalID = setInterval(() => {
   clearInterval(intervalID);
 }, 2000);
 
-
 $(".tile").click(function () {
   if (!isClickEnabled) return;
   noOfClicks++;
-  
   if (noOfClicks <= gameCount) {
     console.log("clicks = ", noOfClicks);
     // build the ID of which of the 16 elements (divs) was clicked
@@ -137,10 +135,10 @@ $(".tile").click(function () {
     }, 500);
   }
   // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
-  if (tileId !== tileSeq[runningIndex]) {
+  if (tileId !== tileSeq[noOfClicks-1]) {
     console.log("yours = ", tileId, "cpu's = ", tileSeq[runningIndex]);
     let intervalID = setTimeout(() => {
-    //   gameOverSnd.play();
+      //   gameOverSnd.play();
       clearTimeout(intervalID);
       alert("! GAME OVER !");
     }, 1000);
@@ -167,8 +165,8 @@ $(".tile").click(function () {
       clearInterval(intervalID);
     }, 2000);
   }
-//   if (tileId === tileSeq[runningIndex]) {
-//     runningIndex++;
-//     console.log("I JUST GOT EXECUTED!!!");
-//   }
+  if (tileId === tileSeq[runningIndex]) {
+    runningIndex++;
+    console.log("I JUST GOT EXECUTED!!!");
+  }
 });
