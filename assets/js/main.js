@@ -12,11 +12,6 @@ $(document).ready(function () {
 $(window).resize(function () {
   responsiveGrid();
 });
-// load sounds //
-let playerClickSnd = new Audio("assets/sounds/hint.wav");
-let displaySeqSnd = new Audio("assets/sounds/pop.wav");
-let clickBtnSnd = new Audio("assets/sounds/ding.wav");
-let gameOverSnd = new Audio("assets/sounds/Wah_Wah.wav");
 
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
@@ -25,6 +20,7 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
+let max = 3; // target level to reach!
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
@@ -65,7 +61,6 @@ function generateTileColourSeq(arr) {
   let colArr = [];
   while (colArr.length < 16) {
     nextColour = arr[i];
-
     colArr.push(colourMap[nextColour]);
     i++;
   }
@@ -80,20 +75,6 @@ function clearAllTiles() {
   }
 }
 
-function displayColouredTile() {
-  let Id = "#tile" + tileSeq[x];
-  $(Id).css("background-color", tileColorSeq[x]);
-  console.log(
-    "current tile = ",
-    tileSeq[x],
-    "current colour = ",
-    tileColorSeq[x]
-  );
-  console.log("displayColouredTile - index = ", index);
-  console.log(tileSeq);
-  return Id;
-}
-
 function displayGuess(tile) {
   Id = "#tile" + tile;
   console.log("YOUR GUESS = ", Id);
@@ -104,119 +85,65 @@ function displayGuess(tile) {
 // function to display all cells up to gameCount //
 function displayCurrentSeq() {
   isClickEnabled = false;
-  if (runningIndex < gameCount) {
-    let tileId = "#tile" + tileSeq[runningIndex];
-    let tileColour = tileColorSeq[runningIndex];
-    $(tileId).css("background-color", tileColorSeq[runningIndex]);
-    displaySeqSnd.play(); // pop
+  if (index < gameCount){
+    let tileId = "#tile" + tileSeq[index];
+    let tileColour = tileColorSeq[index];
+    $(tileId).css("background-color", tileColorSeq[index]);
     console.log("tile = ", tileId, "colour = ", tileColour);
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");
-      runningIndex++;
+      index++;
       displayCurrentSeq();
       clearInterval(intervalID);
     }, 1000);
   } else {
-    runningIndex = 0; // reset index counter so appropriate checks can be made
+    // runningIndex = 0; // reset index counter so appropriate checks can be made
     acceptUserInput();
   }
   return;
-}
-
-function blinkTile() {
-  if (x < gameCount) {
-    let tileId = displayColouredTile();
-    displaySeqSnd.play(); // pop
-    // index++;
-    let intervalID = setInterval(() => {
-      $(tileId).css("background-color", "#000");
-      console.log("tileId = ", tileId, "blinkTile index = ", index);
-      x++;
-      blinkTile();
-      clearInterval(intervalID);
-    }, 1000);
-  } else {
-    acceptUserInput();
-  }
 }
 
 function acceptUserInput() {
   clearAllTiles();
   isClickEnabled = true;
 }
-       //                                 //
-      //                                 //
-     /////////////////////////////////////
-    ///////// Main Game Logic ///////////
-   /////////////////////////////////////
-  //                                 //
- //                                 //
+
+//  GameStart //
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
-let x = 0; // global used to access index's in arrays
-let max = 3; // target level to reach!
-
-// clickBtnSnd.play();
-
 
 let intervalID = setInterval(() => {
-  blinkTile();
+  displayCurrentSeq();
   clearInterval(intervalID);
 }, 2000);
 
-//
-//
-//
-//
-//
-//
-//
-//
-
-console.log("clicks(outside) = ", noOfClicks);
-if (noOfClicks === gameCount) {
-  console.log("FINAL TEST");
-
-  // Seq same
-  if (JSON.stringify(tileSeq) === JSON.stringify(answerSeq)) {
-    alert("WIn");
-  }
-}
 
 $(".tile").click(function () {
   if (!isClickEnabled) return;
-
-  playerClickSnd.play();
   noOfClicks++;
+  
   if (noOfClicks <= gameCount) {
     console.log("clicks = ", noOfClicks);
-
-    tileIdString = $(this).attr("id"); // build the ID of which of the 16 elements (divs) was clicked
+    // build the ID of which of the 16 elements (divs) was clicked
+    tileIdString = $(this).attr("id");
     tileId = parseInt(tileIdString.split("tile")[1]);
-
     console.log("your tile id = ", tileId);
     answerSeq.push(tileId);
-
-    // Glow the tile
-    displayGuess(tileId); // display users guess to screen grid
-
-    // (un)-glow the tile
+    // display users guess to screen grid
+    displayGuess(tileId);
     let intervalID = setInterval(() => {
       $("#tile" + tileId).css("background-color", "#000");
-
       clearTimeout(intervalID);
     }, 500);
   }
-
   // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
   if (tileId !== tileSeq[runningIndex]) {
     console.log("yours = ", tileId, "cpu's = ", tileSeq[runningIndex]);
-    let intervalID = setTimeout(()=> {
-        gameOverSnd.play();
-        clearTimeout(intervalID);
-        alert("! GAME OVER !");
-        blinkTile();
-    },1000);
+    let intervalID = setTimeout(() => {
+    //   gameOverSnd.play();
+      clearTimeout(intervalID);
+      alert("! GAME OVER !");
+    }, 1000);
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
     console.log("! ! ! !   W I N N E R   ! ! ! !");
@@ -229,24 +156,19 @@ $(".tile").click(function () {
     tileColorSeq = [];
     tileIdString = "";
     tileId = 0;
-    blinkTile();
-
     // if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
   } else if (noOfClicks === gameCount) {
     noOfClicks = 0;
     gameCount++; // increment game level (add 1 more tile)
     console.log("ALL CORRECT!");
-    index++; // set to next element in array(s)
     runningIndex = 0;
-
     let intervalID = setInterval(() => {
       displayCurrentSeq();
       clearInterval(intervalID);
     }, 2000);
   }
-
-  if (tileId === tileSeq[runningIndex]) {
-    runningIndex++;
-    console.log("I JUST GOT EXECUTED!!!");
-  }
+//   if (tileId === tileSeq[runningIndex]) {
+//     runningIndex++;
+//     console.log("I JUST GOT EXECUTED!!!");
+//   }
 });
