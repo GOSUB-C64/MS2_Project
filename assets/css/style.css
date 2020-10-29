@@ -93,7 +93,7 @@
 .tile {
   flex: 1 1 25%;
   background-color: #000;
-  border: 1px #eee solid;
+  border: 1px rgb(0,183,255) solid;
   /* cursor: pointer; */
   box-sizing: border-box;
 }

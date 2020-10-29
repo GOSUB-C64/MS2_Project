@@ -1,5 +1,3 @@
-
-
 $(function () {
   $("#myModal").appendTo("body");
 });
@@ -15,6 +13,8 @@ document.getElementById("okButton").addEventListener("click", processUserName);
 function processUserName() {
   let userName = document.getElementById("getUserName").value;
   console.log(userName);
+  localStorage.setItem("storageName", userName);
+
   $("#myModal").modal("hide");
   window.open("main.html");
 }

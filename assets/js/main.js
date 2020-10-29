@@ -1,4 +1,3 @@
-console.log("hi");
 
 // function to keep the grid squares responsive.
 function responsiveGrid() {
@@ -20,7 +19,7 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
-let max = 5; // target level to reach!
+let max = 1; // target level to reach!
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
@@ -32,7 +31,6 @@ function generateTileArray() {
       arr.push(tile);
     }
   }
-  console.log(arr);
   return arr;
 }
 
@@ -64,7 +62,6 @@ function generateTileColourSeq(arr) {
     colArr.push(colourMap[nextColour]);
     i++;
   }
-  console.log(colArr);
   return colArr;
 }
 
@@ -77,7 +74,6 @@ function clearAllTiles() {
 
 function displayGuess(tile) {
   Id = "#tile" + tile;
-  console.log("YOUR GUESS = ", Id);
   let a = tileSeq.indexOf(tile);
   $(Id).css("background-color", tileColorSeq[a]);
 }
@@ -89,7 +85,6 @@ function displayCurrentSeq() {
     let tileId = "#tile" + tileSeq[index];
     let tileColour = tileColorSeq[index];
     $(tileId).css("background-color", tileColorSeq[index]);
-    console.log("tile = ", tileId, "colour = ", tileColour);
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");
       index++;
@@ -121,11 +116,9 @@ $(".tile").click(function () {
   if (!isClickEnabled) return;
   noOfClicks++;
   if (noOfClicks <= gameCount) {
-    console.log("clicks = ", noOfClicks);
     // build the ID of which of the 16 elements (divs) was clicked
     tileIdString = $(this).attr("id");
     tileId = parseInt(tileIdString.split("tile")[1]);
-    console.log("your tile id = ", tileId);
     answerSeq.push(tileId);
     // display users guess to screen grid
     displayGuess(tileId);
@@ -135,8 +128,7 @@ $(".tile").click(function () {
     }, 500);
   }
   // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
-  if (tileId !== tileSeq[noOfClicks-1]) {
-    console.log("yours = ", tileId, "cpu's = ", tileSeq[runningIndex]);
+  if (tileId !== tileSeq[noOfClicks - 1]) {
     let intervalID = setTimeout(() => {
       //   gameOverSnd.play();
       clearTimeout(intervalID);
@@ -144,8 +136,9 @@ $(".tile").click(function () {
     }, 1000);
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
-    console.log("! ! ! !   W I N N E R   ! ! ! !");
-    alert("! ! ! !   W I N N E R   ! ! ! !");
+    let userName = localStorage.getItem("storageName");
+    confirm("! ! ! !   W E L L  D O N E  " + userName.toUpperCase() + "! ! ! !");
+    // confirm(localStorage.getItem("storageName"));
     noOfClicks = 0;
     gameCount = 3;
     index = 0;
@@ -154,11 +147,11 @@ $(".tile").click(function () {
     tileColorSeq = [];
     tileIdString = "";
     tileId = 0;
+    window.location.reload(true);
     // if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
   } else if (noOfClicks === gameCount) {
     noOfClicks = 0;
     gameCount++; // increment game level (add 1 more tile)
-    console.log("ALL CORRECT!");
     runningIndex = 0;
     let intervalID = setInterval(() => {
       displayCurrentSeq();
@@ -167,6 +160,5 @@ $(".tile").click(function () {
   }
   if (tileId === tileSeq[runningIndex]) {
     runningIndex++;
-    console.log("I JUST GOT EXECUTED!!!");
   }
 });
