@@ -138,7 +138,6 @@ $(".tile").click(function () {
   } else if (noOfClicks === gameCount && gameCount === max) {
     let userName = localStorage.getItem("storageName");
     confirm("! ! ! !   W E L L  D O N E  " + userName.toUpperCase() + "! ! ! !");
-    // confirm(localStorage.getItem("storageName"));
     noOfClicks = 0;
     gameCount = 3;
     index = 0;
