@@ -64,11 +64,36 @@
   font-family: "Krona One", sans-serif;
 }
 
+.highScoreGameTitle {
+  text-align: center;
+  padding: 30px;
+  color: rgb(0, 183, 255);
+  font-size: 5em;
+  letter-spacing: 5px;
+  font-family: "Krona One", sans-serif;
+}
+
+.myContentRow {
+    position: relative;
+}
+#high-score-table {
+    width: 30vw;
+    height: 70vh;
+    background-color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 35%;
+    z-index: -20 !important;
+    font-family: "Krona One", sans-serif;
+    /* font-size: 16px; */
+    text-align: center;
+}
+
 .start {
   text-align: center;
 }
 
-#start-button {
+#start-btn {
   font-family: "Krona One", sans-serif;
   color: rgb(82, 80, 85);
   font-size: 2em;
@@ -76,11 +101,27 @@
   border: 2px solid #fff;
   border-radius: 15px;
   padding: 5px 10px 5px 10px;
+  /* float: left; */
 }
 
-#start-button:hover {
+#high-score-btn {
+  font-family: "Krona One", sans-serif;
+  color: rgb(82, 80, 85);
+  font-size: 2em;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  /* float: left; */
+}
+
+#start-btn:hover {
   color: rgb(0, 183, 255);
 }
+#high-score-btn:hover {
+  color: rgb(0, 183, 255);
+}
+
 .button {
   padding: 20px;
 }

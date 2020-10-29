@@ -1,12 +1,29 @@
 $(function () {
   $("#myModal").appendTo("body");
 });
+let startBtn = document.getElementById('start-btn');
+let highScoreBtn = document.getElementById('high-score-btn');
 
-$(document).click(function () {
+
+$(startBtn).click(function () {
   setTimeout(function () {
     $("#myModal").modal("show");
   }, 500);
 });
+
+$(highScoreBtn).click(function () {
+    let intervalID = setInterval(function() {
+     window.open('high-scores.html','_blank', false)
+
+    },5000);
+});
+
+// function startTimer(){
+// var tt = setInterval(function() {
+//     window.open ('menu.html','_self',false)
+// },5000);
+// }
+
 
 document.getElementById("okButton").addEventListener("click", processUserName);
 
