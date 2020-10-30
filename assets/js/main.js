@@ -19,7 +19,7 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
-let max = 1; // target level to reach!
+let max = 16; // target level to reach!
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {

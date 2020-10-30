@@ -33,8 +33,8 @@
 }
 
 .modal {
-    z-index:10;
-    position: relative;
+  z-index: 10;
+  position: relative;
 }
 
 .instructions {
@@ -74,19 +74,20 @@
 }
 
 .myContentRow {
-    position: relative;
+  position: relative;
 }
 #high-score-table {
-    width: 30vw;
-    height: 70vh;
-    background-color: #fff;
-    position: absolute;
-    top: 150px;
-    left: 35%;
-    z-index: -20 !important;
-    font-family: "Krona One", sans-serif;
-    /* font-size: 16px; */
-    text-align: center;
+  width: 30vw;
+  height: 70vh;
+  background-color: #fff;
+  position: absolute;
+  top: 150px;
+  left: 35%;
+  font-family: "Krona One", sans-serif;
+  color: rgb(0, 183, 255);
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 15px;
 }
 
 .start {
@@ -134,7 +135,7 @@
 .tile {
   flex: 1 1 25%;
   background-color: #000;
-  border: 1px rgb(0,183,255) solid;
+  border: 1px rgb(0, 183, 255) solid;
   /* cursor: pointer; */
   box-sizing: border-box;
 }

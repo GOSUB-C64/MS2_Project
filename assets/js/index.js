@@ -1,9 +1,8 @@
 $(function () {
   $("#myModal").appendTo("body");
 });
-let startBtn = document.getElementById('start-btn');
-let highScoreBtn = document.getElementById('high-score-btn');
-
+let startBtn = document.getElementById("start-btn");
+let highScoreBtn = document.getElementById("high-score-btn");
 
 $(startBtn).click(function () {
   setTimeout(function () {
@@ -12,10 +11,7 @@ $(startBtn).click(function () {
 });
 
 $(highScoreBtn).click(function () {
-    let intervalID = setInterval(function() {
-     window.open('high-scores.html','_blank', false)
-
-    },5000);
+  window.open("high-scores.html", "_self", false);
 });
 
 // function startTimer(){
@@ -23,7 +19,6 @@ $(highScoreBtn).click(function () {
 //     window.open ('menu.html','_self',false)
 // },5000);
 // }
-
 
 document.getElementById("okButton").addEventListener("click", processUserName);
 
