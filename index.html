@@ -41,7 +41,7 @@
     <div class="container-fluid">
       <div class="row justify-content-center myContentRow">
         <div class="col-md-12">
-          <h1 class="gameTitle">Simon Squares</h1>
+          <h1 class="splash-gameTitle">Simon Squares</h1>
         </div>
         <div class="instructions">
           <p>A Simple Memory Game</p>
@@ -49,31 +49,45 @@
         </div>
       </div>
       <div class="modal fade" id="myModal">
-            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4>Simon Squares</h4>
-                </div>
-                <div class="modal-body">
-                  <label for="userName">Please Enter Your Name</label>
-                  <input type="text" name="userName" class="form-control" id="getUserName" placeholder="name" value="" maxlength="20">
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="okButton">OK</button>
-                </div>
-              </div>
+        <div
+          class="modal-dialog modal-sm modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Simon Squares</h4>
             </div>
+            <div class="modal-body">
+              <label for="userName">Please Enter Your Name</label>
+              <input
+                type="text"
+                name="userName"
+                class="form-control"
+                id="getUserName"
+                placeholder="name"
+                value=""
+                maxlength="20"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                id="okButton"
+              >
+                OK
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
       <div class="row button">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 start">
-          <!-- <a href="main.html"> -->
-            <button id="start-btn">Start Game</button>
-            <button id="high-score-btn">High Scores</button>
-
-          <!-- </a> -->
+        <div class="col-md-12 start">
+          <button class="my-btn" id="instructions-btn">How To Play</button>
+          <button class="my-btn" id="start-btn">Start Game</button>
+          <button class="my-btn" id="high-score-btn">High Scores</button>
         </div>
-        <div class="col-md-3"></div>
       </div>
     </div>
   </body>

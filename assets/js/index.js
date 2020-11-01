@@ -3,6 +3,8 @@ $(function () {
 });
 let startBtn = document.getElementById("start-btn");
 let highScoreBtn = document.getElementById("high-score-btn");
+let howToBtn = document.getElementById("instructions-btn");
+
 
 $(startBtn).click(function () {
   setTimeout(function () {
@@ -12,6 +14,10 @@ $(startBtn).click(function () {
 
 $(highScoreBtn).click(function () {
   window.open("high-scores.html", "_self", false);
+});
+
+$(howToBtn).click(function () {
+  window.open("instructions.html", "_self", false);
 });
 
 // function startTimer(){
