@@ -76,6 +76,24 @@
 .myContentRow {
   position: relative;
 }
+
+.one {
+    width: 100px;
+    height: 300px;
+    background-color: #f00;
+}
+
+.two {
+    width: 100px;
+    height: 300px;
+    background-color: #0f0;
+}
+
+.three {
+    width: 100px;
+    height: 300px;
+    background-color: #00f;
+}
 #display-to-user {
   width: 30vw;
   height: 70vh;
@@ -88,7 +106,6 @@
   text-align: center;
   border: 4px solid #fff;
   border-radius: 15px;
-  z-index: 1000;
   opacity: 0.6;
 }
 #instructions p {
@@ -102,18 +119,18 @@
 
 .divider {
   width: 80%;
-  height: 3px;
+  height: 2px;
   background-color: rgb(0, 183, 255);
-  margin: 0 auto;
+  margin: 0px 20px auto auto;
 }
 
 .name {
-    font-size: 1.5em;
-    text-align: left;
-    padding: 0px 0px 0px 0px;
+  font-size: 1.5em;
+  text-align: left;
+  padding: 0px 0px 0px 0px;
 }
 .span {
-    padding: 0px 0px 0px 30px;
+  padding: 0px 0px 0px 30px;
 }
 .start {
   text-align: center;
@@ -129,21 +146,18 @@
   padding: 5px 10px 5px 10px;
 }
 
-
-
 .my-btn:hover {
   color: rgb(0, 183, 255);
 }
-
 
 .button {
   padding: 20px;
 }
 
 #back-btn {
-    position: absolute;
-    bottom: 30px;
-    right: 200px;
+  position: absolute;
+  bottom: 30px;
+  right: 200px;
 }
 
 .tileGrid {

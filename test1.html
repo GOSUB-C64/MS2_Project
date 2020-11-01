@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="manifest" href="/manifest.json" />
-    <!-- <link rel="manifest" href="/favicons/manifest.json" /> -->
-
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
+    <link rel="manifest" href="/favicons/manifest.json" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
     <title>Simon Squares</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -37,34 +36,17 @@
     ></script>
   </head>
 
-  <body class="backImage">
-    <div class="container-fluid">
-      <div class="row justify-content-center myContentRow">
-        <div class="col-md-12">
-          <h1 class="highScoreGameTitle">Simon Squares</h1>
-        </div>
-        <div class="row backImage" id="display-to-user">
-          <h5>Top 5 Best Scores</h5>
-          <hr class="divider" />
-          <p id="highScores"></p>
-          <div class="col-md-4">Rank</div>
-          <div class="col-md-4">Name</div>
-          <div class="col-md-4">Level</div>
-
-          <hr class="divider" />
-
-          <div class="row rank">
-            <div class="col-md-1">
-              <p>1st</p>
-              <p>2nd</p>
-              <p>3rd</p>
-              <p>4th</p>
-              <p>5th</p>
+  <body>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col one"></div>
+                <div class="col two"></div>
+                <div class="col three"></div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+    <div class="col-md-4"></div>
   </body>
-  <script src="assets/js/high-scores.js"></script>
 </html>
