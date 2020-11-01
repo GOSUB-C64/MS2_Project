@@ -100,7 +100,7 @@
   padding: 25px 25px 0px 25px;
 }
 
-#divider {
+.divider {
   width: 80%;
   height: 3px;
   background-color: rgb(0, 183, 255);
@@ -110,9 +110,11 @@
 .name {
     font-size: 1.5em;
     text-align: left;
+    padding: 0px 0px 0px 0px;
+}
+.span {
     padding: 0px 0px 0px 30px;
 }
-
 .start {
   text-align: center;
 }

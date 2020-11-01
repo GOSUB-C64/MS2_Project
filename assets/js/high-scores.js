@@ -12,11 +12,11 @@ $(document).ready(function () {
       let fourth = rank.slice(3, 4);
       let fifth = rank.slice(4, 5);
 
-      $("#1st").text(first);
-      $("#2nd").text(second);
-      $("#3rd").text(third);
-      $("#4th").text(fourth);
-      $("#5th").text(fifth);
+      $('#first').append(first);
+      $("#second").append(second);
+      $("#third").append(third);
+      $("#fourth").append(fourth);
+      $("#fifth").append(fifth);
     });
   //   let timeoutID = setTimeout(function () {
   //     window.history.go(-1);
