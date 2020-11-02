@@ -44,22 +44,37 @@
           <h1 class="highScoreGameTitle">Simon Squares</h1>
         </div>
         <div class="row backImage" id="display-to-user">
-          <h5>Top 5 Best Scores</h5>
+          <h5 id="highScoreTableHeader">Top 5 Best Scores</h5>
           <hr class="divider" />
-          <p id="highScores"></p>
-          <div class="col-md-4">Rank</div>
-          <div class="col-md-4">Name</div>
-          <div class="col-md-4">Level</div>
-
+          <div class="row justify-content-center" id="highScoreTableSubHeader">
+            <div class="col-md field">Rank</div>
+            <div class="col-md field">Name</div>
+            <div class="col-md field">Level</div>
+          </div>
           <hr class="divider" />
 
           <div class="row rank">
-            <div class="col-md-1">
+            <div class="col-md">
               <p>1st</p>
               <p>2nd</p>
               <p>3rd</p>
               <p>4th</p>
               <p>5th</p>
+            </div>
+            <div class="col-md name">
+              <p id="first"></p>
+              <p id="second"></p>
+              <p id="third"></p>
+              <p id="fourth"></p>
+              <p id="fifth"></p>
+            </div>
+            <!-- <div class="col-md-3"></div> -->
+            <div class="col-md score">
+              <p id="hs1"></p>
+              <p id="hs2"></p>
+              <p id="hs3"></p>
+              <p id="hs4"></p>
+              <p id="hs5"></p>
             </div>
           </div>
         </div>
