@@ -32,8 +32,8 @@ $(document).ready(function () {
 
 
     });
-  //   let timeoutID = setTimeout(function () {
-  //     window.history.go(-1);
-  //     clearTimeout(timeoutID);
-  //   }, 5000);
+    let timeoutID = setTimeout(function () {
+      window.history.go(-1);
+      clearTimeout(timeoutID);
+    }, 5000);
 });

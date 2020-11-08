@@ -20,13 +20,21 @@ $(howToBtn).click(function () {
   window.open("instructions.html", "_self", false);
 });
 
-// function startTimer(){
-// var tt = setInterval(function() {
-//     window.open ('menu.html','_self',false)
-// },5000);
-// }
 
 document.getElementById("okButton").addEventListener("click", processUserName);
+
+document.getElementById("getUserName").addEventListener('keypress', (e) => {
+    if(e.keycode === 13) {
+        console.log(userName);
+        // processUserName();
+    }
+});
+
+// document.getElementById("getUserName").addEventListener(keycode===13), processUserName;
+
+        
+
+    
 
 function processUserName() {
   let userName = document.getElementById("getUserName").value;

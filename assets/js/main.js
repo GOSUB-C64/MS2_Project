@@ -107,6 +107,10 @@ function acceptUserInput() {
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 
+let userName = localStorage.getItem("storageName");
+document.querySelector('#gamerName').innerHTML = userName.toUpperCase();
+        document.querySelector('#gamerLevel').innerHTML = "0" + gameCount;
+
 let intervalID = setInterval(() => {
   displayCurrentSeq();
   clearInterval(intervalID);
@@ -136,7 +140,6 @@ $(".tile").click(function () {
     }, 1000);
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
-    let userName = localStorage.getItem("storageName");
     confirm("! ! ! !   W E L L  D O N E  " + userName.toUpperCase() + "! ! ! !");
     noOfClicks = 0;
     gameCount = 3;
@@ -152,6 +155,11 @@ $(".tile").click(function () {
     noOfClicks = 0;
     gameCount++; // increment game level (add 1 more tile)
     runningIndex = 0;
+    if(gameCount < 10){
+        document.querySelector('#gamerLevel').innerHTML = "0" + gameCount;
+    } else {
+        document.querySelector('#gamerLevel').innerHTML = gameCount;
+    }
     let intervalID = setInterval(() => {
       displayCurrentSeq();
       clearInterval(intervalID);
