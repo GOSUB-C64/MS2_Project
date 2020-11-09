@@ -1,6 +1,11 @@
+
+// modal to get user name //
 $(function () {
   $("#myModal").appendTo("body");
 });
+
+
+
 let startBtn = document.getElementById("start-btn");
 let highScoreBtn = document.getElementById("high-score-btn");
 let howToBtn = document.getElementById("instructions-btn");
@@ -23,18 +28,14 @@ $(howToBtn).click(function () {
 
 document.getElementById("okButton").addEventListener("click", processUserName);
 
-document.getElementById("getUserName").addEventListener('keypress', (e) => {
+let input = document.getElementById("getUserName");
+input.addEventListener('keypress', (e) => {
     if(e.keycode === 13) {
         console.log(userName);
         // processUserName();
     }
 });
 
-// document.getElementById("getUserName").addEventListener(keycode===13), processUserName;
-
-        
-
-    
 
 function processUserName() {
   let userName = document.getElementById("getUserName").value;

@@ -1,4 +1,3 @@
-
 // function to keep the grid squares responsive.
 function responsiveGrid() {
   var width = $(".tile").outerWidth();
@@ -20,6 +19,7 @@ let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
 let max = 16; // target level to reach!
+let lives = 3;
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 function generateTileArray() {
@@ -108,8 +108,9 @@ let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 
 let userName = localStorage.getItem("storageName");
-document.querySelector('#gamerName').innerHTML = userName.toUpperCase();
-        document.querySelector('#gamerLevel').innerHTML = "0" + gameCount;
+document.querySelector("#gamerName").innerHTML = userName.toUpperCase();
+document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
+document.querySelector("#lives").innerHTML = lives;
 
 let intervalID = setInterval(() => {
   displayCurrentSeq();
@@ -133,14 +134,47 @@ $(".tile").click(function () {
   }
   // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
   if (tileId !== tileSeq[noOfClicks - 1]) {
-    let intervalID = setTimeout(() => {
-      //   gameOverSnd.play();
-      clearTimeout(intervalID);
-      alert("! GAME OVER !");
-    }, 1000);
+    noOfClicks = 0;
+    runningIndex = 0;
+    lives--;
+
+    let timeoutID = setTimeout(() => {
+          document.getElementById('gamerLives').style.backgroundColor = '#f00';  
+    //   clearTimeout(timeoutID);
+    }, 2000);
+
+          document.getElementById('gamerLives').style.backgroundColor = '#000';  
+
+    document.querySelector("#lives").innerHTML = lives;
+
+    if (lives == 0) {
+      $(function () {
+        $("#playAgainModal").appendTo("body");
+      });
+      setTimeout(function () {
+        $("#playAgainModal").modal("show");
+      }, 500);
+      document
+        .getElementById("yesButton")
+        .addEventListener("click", function () {
+          window.location.reload(true);
+        });
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          window.open("index.html", "_self", false);
+        });
+    }
+    let intervalID = setInterval(() => {
+      displayCurrentSeq();
+      clearInterval(intervalID);
+    }, 2000);
+
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
-    confirm("! ! ! !   W E L L  D O N E  " + userName.toUpperCase() + "! ! ! !");
+    confirm(
+      "! ! ! !   W E L L  D O N E  " + userName.toUpperCase() + "! ! ! !"
+    );
     noOfClicks = 0;
     gameCount = 3;
     index = 0;
@@ -155,11 +189,13 @@ $(".tile").click(function () {
     noOfClicks = 0;
     gameCount++; // increment game level (add 1 more tile)
     runningIndex = 0;
-    if(gameCount < 10){
-        document.querySelector('#gamerLevel').innerHTML = "0" + gameCount;
+
+    if (gameCount < 10) {
+      document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
     } else {
-        document.querySelector('#gamerLevel').innerHTML = gameCount;
+      document.querySelector("#gamerLevel").innerHTML = gameCount;
     }
+
     let intervalID = setInterval(() => {
       displayCurrentSeq();
       clearInterval(intervalID);

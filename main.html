@@ -43,13 +43,49 @@
           <h1 class="main-gameTitle">Simon Squares</h1>
         </div>
       </div>
+      <div class="modal fade" id="playAgainModal">
+        <div
+          class="modal-dialog modal-sm modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="playAgainModalQuestion">
+                Oops!! You made a wrong choice
+              </p>
+            </div>
+            <div class="modal-body">
+              <p class="playAgainModalQuestion">
+                Would you like to play again?
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                id="yesButton"
+              >
+                YES
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                id="noButton"
+              >
+                NO
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row justify-content-center" id="tile sound">
         <div class="col-4">
-            <h1 class="header-for-main-game-screen">Player Name</h1>
-            <button class="inGame-btn" id="gamerName"></button>
+          <h1 class="gamerName-gamerLevel-gamerLives">Player Name</h1>
+          <button class="inGame-btn" id="gamerName"></button>
         </div>
         <div class="col-4 tileGrid">
-
           <!-- game grid -->
           <div class="tile" id="tile0"></div>
           <div class="tile" id="tile1"></div>
@@ -69,8 +105,11 @@
           <div class="tile" id="tile15"></div>
         </div>
         <div class="col-4">
-            <h1 class="header-for-main-game-screen">Level</h1>
-            <button class="inGame-btn" id="gamerLevel">Level</button>
+          <h1 class="gamerName-gamerLevel-gamerLives">Level</h1>
+          <button class="inGame-btn" id="gamerLevel"></button>
+
+          <h1 class="gamerName-gamerLevel-gamerLives" id="gamerLivesText">Lives</h1>
+          <button class="inGame-btn gamer gamerLives" id="lives"></button>
         </div>
       </div>
     </div>

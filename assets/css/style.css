@@ -190,12 +190,17 @@
 }
 
 #gamerName,
-#gamerLevel {
+#gamerLevel,
+#lives {
   display: block;
   margin: auto;
 }
 
-.header-for-main-game-screen {
+#gamerLivesText {
+  margin-top: 40px;
+}
+
+.gamerName-gamerLevel-gamerLives {
   font-family: "Krona One", sans-serif;
   color: rgb(0, 183, 255);
   font-size: 2em;
@@ -206,6 +211,15 @@
   position: absolute;
   bottom: 30px;
   right: 200px;
+}
+
+#playAgainModalQuestion {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+#playAgainModal {
+  font-family: "Krona One", sans-serif;
 }
 
 .tileGrid {
