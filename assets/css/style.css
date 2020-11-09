@@ -220,6 +220,8 @@
 
 #playAgainModal {
   font-family: "Krona One", sans-serif;
+  height: 600px;
+  max-height: 600px;
 }
 
 .tileGrid {

@@ -43,5 +43,5 @@ function processUserName() {
   localStorage.setItem("storageName", userName);
 
   $("#myModal").modal("hide");
-  window.open("main.html");
+  window.open("main.html", "_self", false);
 }

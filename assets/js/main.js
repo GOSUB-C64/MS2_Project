@@ -136,15 +136,14 @@ $(".tile").click(function () {
   if (tileId !== tileSeq[noOfClicks - 1]) {
     noOfClicks = 0;
     runningIndex = 0;
-    lives--;
+    document.getElementById("lives").style.backgroundColor = "#f00";
 
     let timeoutID = setTimeout(() => {
-          document.getElementById('gamerLives').style.backgroundColor = '#f00';  
-    //   clearTimeout(timeoutID);
-    }, 2000);
+      document.getElementById("lives").style.backgroundColor = "#000";
+      clearTimeout(timeoutID);
+    }, 500);
 
-          document.getElementById('gamerLives').style.backgroundColor = '#000';  
-
+    lives--;
     document.querySelector("#lives").innerHTML = lives;
 
     if (lives == 0) {
