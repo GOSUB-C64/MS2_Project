@@ -79,6 +79,18 @@ function displayGuess(tile) {
   $(Id).css("background-color", tileColorSeq[a]);
 }
 
+function displayAllTiles() {
+  let i = 0;
+  let tileId = "#tile" + tileSeq[i];
+  $(tileId).css("background-color", tileColorSeq[index]);
+  let intervalID = setInterval(() => {
+      $(tileId).css("background-color", "#000");
+      i++;
+      displayAllTiles();
+      clearInterval(intervalID);
+    }, 300);
+}
+
 // function to display all cells up to gameCount //
 function displayCurrentSeq() {
   isClickEnabled = false;
@@ -130,6 +142,7 @@ $(".tile").click(function () {
     answerSeq.push(tileId);
     // display users guess to screen grid
     displayGuess(tileId);
+
     let intervalID = setInterval(() => {
       $("#tile" + tileId).css("background-color", "#000");
       clearTimeout(intervalID);
@@ -149,10 +162,14 @@ $(".tile").click(function () {
     lives--;
     document.querySelector("#lives").innerHTML = lives;
 
-    if (lives >= 1 && lives < 3) {
-      alert("You made a mistake and lose a life!");
-      alert("Are you ready to continue?");
+    if (lives > 0 && lives <= 3) {
+      let timeoutID = setTimeout(() => {
+        alert("You made a mistake and lose a life!");
+        alert("Are you ready to continue?");
+        clearTimeout(timeoutID);
+      }, 1000);
     }
+
     if (lives == 0) {
       $(function () {
         $("#playAgainModal").appendTo("body");
@@ -162,11 +179,16 @@ $(".tile").click(function () {
         "<p>Oops!! You made a wrong choice but you got to level </p>";
       $(".modal-header").html(`${playAgainModalQuestion}<br><br>${gameCount}`);
 
-      $(".modal-body").html(`${userName.toUpperCase()} - would you like to play again?`);
+      $(".modal-body").html(
+        `${userName.toUpperCase()} - would you like to play again?`
+      );
 
       setTimeout(function () {
         $("#playAgainModal").modal("show");
       }, 500);
+
+      displayAllTiles();
+
       document
         .getElementById("yesButton")
         .addEventListener("click", function () {
