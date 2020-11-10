@@ -213,6 +213,12 @@
   right: 200px;
 }
 
+.modal-header {
+  /* display: block; */
+  font-size: 1.1em;
+  text-align: center;
+}
+
 #playAgainModalQuestion {
   font-size: 1.1em;
   text-align: center;

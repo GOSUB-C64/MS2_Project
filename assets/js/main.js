@@ -7,6 +7,7 @@ function responsiveGrid() {
 $(document).ready(function () {
   responsiveGrid();
 });
+
 $(window).resize(function () {
   responsiveGrid();
 });
@@ -113,6 +114,8 @@ document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
 document.querySelector("#lives").innerHTML = lives;
 
 let intervalID = setInterval(() => {
+  alert("ARE YOU READY TO PLAY?");
+
   displayCurrentSeq();
   clearInterval(intervalID);
 }, 2000);
@@ -141,15 +144,26 @@ $(".tile").click(function () {
     let timeoutID = setTimeout(() => {
       document.getElementById("lives").style.backgroundColor = "#000";
       clearTimeout(timeoutID);
-    }, 500);
+    }, 3000);
 
     lives--;
     document.querySelector("#lives").innerHTML = lives;
 
+    if (lives >= 1 && lives < 3) {
+      alert("You made a mistake and lose a life!");
+      alert("Are you ready to continue?");
+    }
     if (lives == 0) {
       $(function () {
         $("#playAgainModal").appendTo("body");
       });
+
+      let playAgainModalQuestion =
+        "<p>Oops!! You made a wrong choice but you got to level </p>";
+      $(".modal-header").html(`${playAgainModalQuestion}<br><br>${gameCount}`);
+
+      $(".modal-body").html(`${userName.toUpperCase()} - would you like to play again?`);
+
       setTimeout(function () {
         $("#playAgainModal").modal("show");
       }, 500);

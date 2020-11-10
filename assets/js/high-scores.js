@@ -30,10 +30,11 @@ $(document).ready(function () {
       $("#hs4").append(hs4);
       $("#hs5").append(hs5);
 
-
     });
-    let timeoutID = setTimeout(function () {
-      window.history.go(-1);
-      clearTimeout(timeoutID);
-    }, 5000);
+});
+
+let backBtn = document.getElementById("back-btn");
+
+$(backBtn).click(function () {
+  window.open("index.html", "_self", false);
 });
