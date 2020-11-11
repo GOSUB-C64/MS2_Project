@@ -239,7 +239,6 @@
   flex: 1 1 25%;
   background-color: #000;
   border: 1px rgb(0, 183, 255) solid;
-  /* cursor: pointer; */
   box-sizing: border-box;
 }
 
@@ -250,12 +249,15 @@
 .clearTiles {
   background-color: #000;
 }
+
+
+
 /* media queries */
 
 @media screen and (max-width: 576px) {
   .splash-gameTitle,
   .main-gameTitle {
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: center;
   }
   .instructions p {
@@ -279,7 +281,7 @@
   }
 
   .tile {
-    flex: 1 1 25%;
+    flex: 0 0 25% !important;
   }
 
   .tile:hover {
@@ -287,8 +289,8 @@
   }
 
   .tileGrid {
-    flex-direction: column;
-    padding: 0px !important;
+    flex-direction: row;
+    padding: 0px 30px !important;
   }
 
   .mobCol {
