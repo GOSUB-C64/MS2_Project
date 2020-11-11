@@ -250,3 +250,48 @@
 .clearTiles {
   background-color: #000;
 }
+/* media queries */
+
+@media screen and (max-width: 576px) {
+  .splash-gameTitle,
+  .main-gameTitle {
+    font-size: 2em;
+    text-align: center;
+  }
+  .instructions p {
+    font-size: 0.7em;
+    letter-spacing: 0.2em;
+  }
+
+  .my-btn {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .gamerName-gamerLevel-gamerLives {
+    font-size: 0.7em;
+  }
+
+  .inGame-btn {
+    font-size: 0.7em;
+    padding: 3px;
+    border-width: 1px;
+  }
+
+  .tile {
+    flex: 1 1 25%;
+  }
+
+  .tile:hover {
+    border-width: 1px;
+  }
+
+  .tileGrid {
+    flex-direction: column;
+    padding: 0px !important;
+  }
+
+  .mobCol {
+      padding: 0px 6px !important;
+  }
+}

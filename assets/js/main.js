@@ -126,7 +126,7 @@ document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
 document.querySelector("#lives").innerHTML = lives;
 
 let intervalID = setInterval(() => {
-  alert("ARE YOU READY TO PLAY?");
+  alert("GET READY TO PLAY!!");
 
   displayCurrentSeq();
   clearInterval(intervalID);
