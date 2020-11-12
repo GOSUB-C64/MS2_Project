@@ -123,7 +123,7 @@ let tileColorSeq = generateTileColourSeq(tileSeq);
 let userName = localStorage.getItem("storageName");
 document.querySelector("#gamerName").innerHTML = userName.toUpperCase();
 document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
-document.querySelector("#lives").innerHTML = lives;
+document.querySelector("#gamerLives").innerHTML = lives;
 
 let intervalID = setInterval(() => {
   alert("GET READY TO PLAY!!");
@@ -160,7 +160,7 @@ $(".tile").click(function () {
     }, 3000);
 
     lives--;
-    document.querySelector("#lives").innerHTML = lives;
+    document.querySelector("#gamerLives").innerHTML = lives;
 
     if (lives > 0 && lives <= 3) {
       let timeoutID = setTimeout(() => {

@@ -44,17 +44,11 @@
         </div>
       </div>
       <div class="modal fade" id="playAgainModal">
-        <div
-          class="modal-dialog modal modal-dialog-centered"
-          role="document"
-        >
+        <div class="modal-dialog modal modal-dialog-centered" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              
-            </div>
+            <div class="modal-header"></div>
             <div class="modal-body">
-              <p class="playAgainModalQuestion">
-              </p>
+              <p class="playAgainModalQuestion"></p>
             </div>
             <div class="modal-footer">
               <button
@@ -77,36 +71,45 @@
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-4 mobCol d-none d-sm-block">
-          <h1 class="gamerName-gamerLevel-gamerLives">Player Name</h1>
-          <button class="inGame-btn" id="gamerName"></button>
-        </div>
-        <div class="col-md-4 col-sm-12 tileGrid">
-          <!-- game grid -->
-          <div class="tile" id="tile0"></div>
-          <div class="tile" id="tile1"></div>
-          <div class="tile" id="tile2"></div>
-          <div class="tile" id="tile3"></div>
-          <div class="tile" id="tile4"></div>
-          <div class="tile" id="tile5"></div>
-          <div class="tile" id="tile6"></div>
-          <div class="tile" id="tile7"></div>
-          <div class="tile" id="tile8"></div>
-          <div class="tile" id="tile9"></div>
-          <div class="tile" id="tile10"></div>
-          <div class="tile" id="tile11"></div>
-          <div class="tile" id="tile12"></div>
-          <div class="tile" id="tile13"></div>
-          <div class="tile" id="tile14"></div>
-          <div class="tile" id="tile15"></div>
-        </div>
-        <div class="col-4 mobCol">
-          <h1 class="gamerName-gamerLevel-gamerLives">Level</h1>
-          <button class="inGame-btn" id="gamerLevel"></button>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 d-none d-sm-block">
+            <h1 class="gamerName-gamerLevel-gamerLives">Player Name</h1>
+            <button class="inGame-btn" id="gamerName"></button>
+          </div>
+          <div class="col-md-4 col-xs-12 tileGrid">
+            <!-- game grid -->
+            <div class="tile" id="tile0"></div>
+            <div class="tile" id="tile1"></div>
+            <div class="tile" id="tile2"></div>
+            <div class="tile" id="tile3"></div>
+            <div class="tile" id="tile4"></div>
+            <div class="tile" id="tile5"></div>
+            <div class="tile" id="tile6"></div>
+            <div class="tile" id="tile7"></div>
+            <div class="tile" id="tile8"></div>
+            <div class="tile" id="tile9"></div>
+            <div class="tile" id="tile10"></div>
+            <div class="tile" id="tile11"></div>
+            <div class="tile" id="tile12"></div>
+            <div class="tile" id="tile13"></div>
+            <div class="tile" id="tile14"></div>
+            <div class="tile" id="tile15"></div>
+          </div>
+          <div class="w-100"></div>
 
-          <h1 class="gamerName-gamerLevel-gamerLives" id="gamerLivesText">Lives</h1>
-          <button class="inGame-btn gamerLives" id="lives"></button>
+          <div class="col-md-4 col-xs-1">
+            <h1 class="gamerName-gamerLevel-gamerLives">Level</h1>
+            <button class="inGame-btn" id="gamerLevel"></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-xs-6">
+            <h1 class="gamerName-gamerLevel-gamerLives" id="gamerLivesText">
+              Lives
+            </h1>
+            <button class="inGame-btn gamerLives" id="gamerLives"></button>
+          </div>
         </div>
       </div>
     </div>

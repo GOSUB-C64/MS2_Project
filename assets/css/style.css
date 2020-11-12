@@ -191,7 +191,7 @@
 
 #gamerName,
 #gamerLevel,
-#lives {
+#gamerLives {
   display: block;
   margin: auto;
 }
@@ -250,8 +250,6 @@
   background-color: #000;
 }
 
-
-
 /* media queries */
 
 @media screen and (max-width: 576px) {
@@ -278,6 +276,7 @@
     font-size: 0.7em;
     padding: 3px;
     border-width: 1px;
+    border-radius: 0px;
   }
 
   .tile {
@@ -292,8 +291,17 @@
     flex-direction: row;
     padding: 0px 30px !important;
   }
-
+/* 
   .mobCol {
-      padding: 0px 6px !important;
+    /* flex-direction: column !important; */
+    padding: 0px 10px !important;
+    font-size: 1em;
+    /* text-align: left; */
+  } */
+
+  #gamerLevel,
+  #gamerLives {
+    font-size: 2em;
+    float: left;
   }
 }
