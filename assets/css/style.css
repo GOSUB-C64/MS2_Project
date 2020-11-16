@@ -303,14 +303,18 @@
   }
 }
 
-/* @media screen and (max-width: 768px) {
-  .myCol {
-    position: relative;
-    padding-bottom: 20px;
+@media screen and (min-width: 992px) {
+  #gamerLivesText {
+    padding-top: 100px;
   }
-  #gamerName {
-    position: absolute;
-    top: 0px;
-    left: 200px;
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 992px) {
+
+  .gamerName-gamerLevel-gamerLives {
+    font-size: 1.5em !important;
   }
-} */
+
+  #gamerLivesText {
+    padding-top: 30px;
+  }
+}

@@ -19,7 +19,7 @@ let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
-let max = 16; // target level to reach!
+let max = 2; // target level to reach!
 let lives = 3;
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
@@ -84,11 +84,11 @@ function displayAllTiles() {
   let tileId = "#tile" + tileSeq[i];
   $(tileId).css("background-color", tileColorSeq[index]);
   let intervalID = setInterval(() => {
-      $(tileId).css("background-color", "#000");
-      i++;
-      displayAllTiles();
-      clearInterval(intervalID);
-    }, 300);
+    $(tileId).css("background-color", "#000");
+    i++;
+    displayAllTiles();
+    clearInterval(intervalID);
+  }, 300);
 }
 
 // function to display all cells up to gameCount //
@@ -152,10 +152,10 @@ $(".tile").click(function () {
   if (tileId !== tileSeq[noOfClicks - 1]) {
     noOfClicks = 0;
     runningIndex = 0;
-    document.getElementById("lives").style.backgroundColor = "#f00";
+    document.getElementById("gamerLives").style.backgroundColor = "#f00";
 
     let timeoutID = setTimeout(() => {
-      document.getElementById("lives").style.backgroundColor = "#000";
+      document.getElementById("gamerLives").style.backgroundColor = "#000";
       clearTimeout(timeoutID);
     }, 3000);
 
@@ -164,7 +164,7 @@ $(".tile").click(function () {
 
     if (lives > 0 && lives <= 3) {
       let timeoutID = setTimeout(() => {
-        alert("You made a mistake and lose a life!");
+        alert("You've made a mistake and lose a life!");
         alert("Are you ready to continue?");
         clearTimeout(timeoutID);
       }, 1000);
@@ -187,7 +187,7 @@ $(".tile").click(function () {
         $("#playAgainModal").modal("show");
       }, 500);
 
-      displayAllTiles();
+    //   displayAllTiles();
 
       document
         .getElementById("yesButton")
@@ -207,9 +207,36 @@ $(".tile").click(function () {
 
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
-    confirm(
-      "! ! ! !   W E L L  D O N E  " + userName.toUpperCase() + "! ! ! !"
-    );
+    $(function () {
+    //   document.getElementById("playAgainModal").removeEventListener("click");
+
+      $("#playAgainModal").appendTo("body");
+
+      let playAgainModalQuestion = "<p>W E L L  D O N E   </p>";
+      $(".modal-header").html(
+        `${playAgainModalQuestion} ${userName.toUpperCase()}`
+      );
+
+      $(".modal-body").html(
+        `${userName.toUpperCase()} - would you like to play again?`
+      );
+
+      $("#playAgainModal").modal("show");
+
+      // displayAllTiles();
+
+      document
+        .getElementById("yesButton")
+        .addEventListener("click", function () {
+          window.location.reload(true);
+        });
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          window.open("index.html", "_self", false);
+        });
+    });
+
     noOfClicks = 0;
     gameCount = 3;
     index = 0;
