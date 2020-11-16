@@ -196,10 +196,6 @@
   margin: auto;
 }
 
-#gamerLivesText {
-  margin-top: 40px;
-}
-
 .gamerName-gamerLevel-gamerLives {
   font-family: "Krona One", sans-serif;
   color: rgb(0, 183, 255);
@@ -252,7 +248,7 @@
 
 /* media queries */
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .splash-gameTitle,
   .main-gameTitle {
     font-size: 2.5em;
@@ -269,14 +265,16 @@
   }
 
   .gamerName-gamerLevel-gamerLives {
-    font-size: 0.7em;
+    font-size: 1.5em;
+    margin-top: 40px;
   }
 
-  .inGame-btn {
-    font-size: 0.7em;
-    padding: 3px;
-    border-width: 1px;
-    border-radius: 0px;
+  .myCol {
+    padding: 0px;
+  }
+
+  #gamerName {
+    margin-bottom: 10px;
   }
 
   .tile {
@@ -291,19 +289,28 @@
     flex-direction: row;
     padding: 0px 30px !important;
   }
-
-
-
-
-.noPadding > * {
-    padding: 0px !important;
-    margin: 0px !important;
-    border: 0px !important;
 }
 
-  #gamerLevel,
-  #gamerLives {
-    font-size: 2em;
-    float: left;
+@media screen and (min-width: 768px) {
+  .myRow {
+    position: relative;
+  }
+
+  #gamerLivesText {
+    position: absolute;
+    top: 100px;
+    right: 0px;
   }
 }
+
+/* @media screen and (max-width: 768px) {
+  .myCol {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  #gamerName {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+  }
+} */
