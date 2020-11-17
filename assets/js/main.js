@@ -245,7 +245,8 @@ $(".tile").click(function () {
     tileColorSeq = [];
     tileIdString = "";
     tileId = 0;
-    window.location.reload(true);
+
+    
     // if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
   } else if (noOfClicks === gameCount) {
     noOfClicks = 0;
