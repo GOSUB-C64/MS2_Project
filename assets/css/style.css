@@ -189,6 +189,10 @@
   padding: 20px;
 }
 
+.playAgain-header {
+    text-align: center;
+}
+
 #gamerName,
 #gamerLevel,
 #gamerLives {

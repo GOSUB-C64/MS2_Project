@@ -214,11 +214,11 @@ $(".tile").click(function () {
 
       let playAgainModalQuestion = "<p>W E L L  D O N E   </p>";
       $(".modal-header").html(
-        `${playAgainModalQuestion} ${userName.toUpperCase()}`
+        `${playAgainModalQuestion}`
       );
 
       $(".modal-body").html(
-        `${userName.toUpperCase()} - would you like to play again?`
+        `Would you like to play again, ${userName.toUpperCase()}?`
       );
 
       $("#playAgainModal").modal("show");
