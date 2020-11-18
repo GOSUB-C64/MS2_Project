@@ -259,9 +259,8 @@
     margin: 5px;
   }
 
-  .splash-gameTitle,
   .main-gameTitle {
-    font-size: 7.5em;
+    font-size: 6em;
     text-align: center;
   }
 }
@@ -277,9 +276,14 @@
     letter-spacing: 0.2em;
   }
 
-  .my-btn {
+  /* .my-btn {
     font-size: 1em;
     margin-bottom: 20px;
+  } */
+
+  .my-btn {
+    font-size: 1.5em;
+    padding: 0px 50px;
   }
 
   .gamerName-gamerLevel-gamerLives {
@@ -340,11 +344,4 @@
   .my-btn {
     font-size: 1.5em;
   }
-}
-
-@media screen and (max-width: 768px) {
-.my-btn {
-    font-size: 1.5em;
-    padding: 0px 50px
-}
 }

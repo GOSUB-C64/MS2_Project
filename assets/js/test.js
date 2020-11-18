@@ -1,20 +1,37 @@
-console.log("hello!")
+console.log("hello!");
 
+$(document).ready(function () {
+  $("#myModal").modal("show");
+});
 
-let lastIntervalId, counter = 5;
-const greeting = delay => {
-  if (counter === 5) {
-    clearInterval(lastIntervalId);
-    lastIntervalId = setInterval(() => {
-      console.log('Hello World. ', delay);
-      greeting(delay + 100);
-    }, delay);
-    counter = 0;
-  }
-counter += 1;
-};
-greeting(100);
+$("#myForm").validate({
+  rules: {
+    name: {
+      minlength: 1,
+      required: true,
+    },
+  },
+  highlight: function (element) {
+    $("#firstname").removeClass("has-success").addClass("has-error");
+  },
+  success: function (element) {
+    $("#firstname").removeClass("has-error").addClass("has-success");
+  },
+});
 
+// let lastIntervalId, counter = 5;
+// const greeting = delay => {
+//   if (counter === 5) {
+//     clearInterval(lastIntervalId);
+//     lastIntervalId = setInterval(() => {
+//       console.log('Hello World. ', delay);
+//       greeting(delay + 100);
+//     }, delay);
+//     counter = 0;
+//   }
+// counter += 1;
+// };
+// greeting(100);
 
 // const greeting = delay =>
 //   setTimeout(() => {
@@ -23,7 +40,6 @@ greeting(100);
 //   }, delay * 1000);
 
 // greeting(1);
-
 
 // let x = 0;
 // let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
