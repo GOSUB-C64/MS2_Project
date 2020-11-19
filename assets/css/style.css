@@ -6,7 +6,7 @@
 }
 
 .backImage {
-  background-image: url(../img/img1.jpg);
+  background-image: url(../images/img1.jpg);
   position: relative;
   backdrop-filter: blur(5px);
   width: 100vw;
