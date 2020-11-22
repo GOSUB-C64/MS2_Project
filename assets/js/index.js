@@ -21,23 +21,23 @@ $(howToBtn).click(function () {
 
 document.getElementById("okButton").addEventListener("click", processUserName);
 
+function processUserName() {
+  let userName = document.getElementById("getUserName").value || 'Player';
+  localStorage.setItem("storageName", userName);
+  $("#myModal").modal("hide");
+  window.open("main.html", "_self", false);
+}
+
 // function processUserName() {
 //   let userName = document.getElementById("getUserName").value;
-//   localStorage.setItem("storageName", userName);
-//   $("#myModal").modal("hide");
-//   window.open("main.html", "_self", false);
+//   if (userName == "") {
+//     console.log("please type your name");
+//     alert("please type your name");
+//     $("#myModal").modal("show");
+//   } else {
+//     console.log("user name =", userName);
+//     localStorage.setItem("storageName", userName);
+//     $("#myModal").modal("hide");
+//     window.open("main.html", "_self", false);
+//   }
 // }
-
-function processUserName() {
-  let userName = document.getElementById("getUserName").value;
-  if (userName == "") {
-    console.log("please type your name");
-    alert("please type your name");
-    $("#myModal").modal("show");
-  } else {
-    console.log("user name =", userName);
-    localStorage.setItem("storageName", userName);
-    $("#myModal").modal("hide");
-    window.open("main.html", "_self", false);
-  }
-}
