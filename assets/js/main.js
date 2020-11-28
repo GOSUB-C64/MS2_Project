@@ -96,7 +96,6 @@ function displayCurrentSeq() {
   isClickEnabled = false;
   if (index < gameCount) {
     let tileId = "#tile" + tileSeq[index];
-    let tileColour = tileColorSeq[index];
     $(tileId).css("background-color", tileColorSeq[index]);
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");

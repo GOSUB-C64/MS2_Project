@@ -1,41 +1,44 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Simon Squares
 
-Welcome Chris Curran,
+Simon Squares is a memory testing game where the user attempts to recreate the pattern sequence that the cpu displays prior to the users' guess.
+The inspiration was taken from the 'Simon' electronic game from the 1980's and also from this [website...](https://www.memozor.com/simon-games/simon-game-colored-squares)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+# UX
 
-## Gitpod Reminders
+### Strategy
+The design strategy for this project was simple...
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* Create a simple memory game that tests the users' ability to remember a certain sequence of randomly appearing coloured squares in a predefined grid of squares.
 
-`python3 -m http.server`
+* The User Interface would consist of a grid of 16 squares in a 4x4 grid arrangement.
 
-A blue button should appear to click: *Make Public*,
+### Scope
+Things to include in this game is obviously the playing arena which would be the grid spoken of earlier. I would need (as a user) to see something that indicates which level I am on at any given moment and maybe a life counter.
 
-Another blue button should appear to click: *Open Browser*.
+The name of the player will need to be displayed also and this would be inputted by the user before the game is played.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+There must be a section where the user can read the instructions on how to play the game - a demo maybe?
 
-A blue button should appear to click: *Make Public*,
+If the user reaches the end of the game (which could be trying to remember a sequence of 20 coloured grid squares) then he/she could have their name recorded on a 'high-score table' with the possibility of being interactive by clicking on other high score holders and seeing their location on a google map.
 
-Another blue button should appear to click: *Open Browser*.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+### Structure
 
-## Updates Since The Instructional Video
+The basic structure of this project could be divided up into 3 or 4 pages.
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+* A welcome title page with links to play the game, instructions and to view the highscore table
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed along with other common files.
+* The main game page showing the title of the game, the players name, level and lives remaining.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* A page showing the instructions on how to play.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* A page showing the previous players' high scores so far.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Skeleton
+[Here](https://github.com/GOSUB-C64/MS2_Project/tree/master/assets/wireframes/MS2_Wireframe.pdf) I have attempted to get a look and feel for the page layout of the game using wireframes.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Surface
 
---------
 
-Happy coding!
+
+
