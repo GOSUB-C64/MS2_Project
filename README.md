@@ -35,6 +35,7 @@ The basic structure of this project could be divided up into 3 or 4 pages.
 * A page showing the previous players' high scores so far.
 
 ### Skeleton
+
 [Here](https://github.com/GOSUB-C64/MS2_Project/tree/master/assets/wireframes/MS2_Wireframe.pdf) I have attempted to get a look and feel for the page layout of the game using wireframes.
 
 ### Surface
