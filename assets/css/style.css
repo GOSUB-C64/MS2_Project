@@ -7,7 +7,7 @@
 
 .backImage {
   background-image: url(../images/simon-background.blurred.jpg);
-  background-repeat : no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   width: 100vw;
@@ -94,12 +94,15 @@
   background-color: #00f;
 }
 #display-to-user {
-  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
   height: 70vh;
   background-color: #fff;
   position: absolute;
   top: 150px;
-  left: 35%;
+  left: 25%;
   font-family: "Krona One", sans-serif;
   color: rgb(0, 183, 255);
   text-align: center;
@@ -190,7 +193,7 @@
 }
 
 .playAgain-header {
-    text-align: center;
+  text-align: center;
 }
 
 #gamerName,
@@ -252,6 +255,14 @@
 #playAgainModal {
   transform: translate3d(0, 0, 0);
 }
+.rank,
+.name,
+.score {
+  font-size: 1em;
+}
+#highScoreTableSubHeader {
+  font-size: 1em;
+}
 
 /*/////////////////
 /* media queries */
@@ -267,11 +278,22 @@
     text-align: center;
   }
 }
+@media screen and (max-width: 1024px) {
+  .highScoreGameTitle {
+    font-size: 3em !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+    #display-to-user {
+        width: 75vw;
+}
+
 
 @media screen and (max-width: 768px) {
   .splash-gameTitle,
   .main-gameTitle {
-    font-size: 2.5em;
+    font-size: 2.5em !important;
     text-align: center;
   }
   .instructions p {
@@ -280,7 +302,7 @@
   }
 
   .my-btn {
-    font-size: .5em;
+    font-size: 0.5em;
     padding: 0px 50px;
   }
 
@@ -308,6 +330,10 @@
   .tileGrid {
     flex-direction: row;
     padding: 0px 30px !important;
+  }
+
+  #display-to-user {
+    width: 90vw;
   }
 }
 
