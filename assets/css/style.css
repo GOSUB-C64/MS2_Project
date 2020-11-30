@@ -72,8 +72,8 @@
   font-family: "Krona One", sans-serif;
 }
 
-.myContentRow {
-  position: relative;
+.myCenteredContent {
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,12 +97,10 @@
   background-color: #00f;
 }
 #display-to-user {
-  width: 50vw;
-  height: 70vh;
+  margin: 0 auto;
+  width: 80vw;
+  height: 60vh;
   background-color: #fff;
-  position: absolute;
-  top: 150px;
-  left: 25%;
   font-family: "Krona One", sans-serif;
   color: rgb(0, 183, 255);
   text-align: center;
@@ -110,18 +108,20 @@
   border-radius: 15px;
   opacity: 0.6;
 }
+
 #instructions p {
   padding: 8px 0px;
 }
 
 #highScoreTableHeader {
+  margin: 0 auto;
   padding: 30px 0px 0px 5px;
   font-size: 1.9em;
 }
 
 #highScoreTableSubHeader {
   font-size: 1.3em;
-  padding-left: 40px;
+  padding-left: 5%;
 }
 
 .field {
@@ -129,7 +129,7 @@
 }
 
 .rank {
-  padding-left: 38px;
+  padding-left: 5%;
   font-size: 1.5em;
 }
 
@@ -211,8 +211,7 @@
 }
 
 #back-btn {
-  /* position: relative; */
-  /* margin: 0 auto; */
+  margin: 40px auto;
 }
 
 .modal-header {
@@ -276,16 +275,24 @@
     font-size: 6em;
     text-align: center;
   }
+
+  .field {
+    font-size: 1.5em;
+  }
+  .rank p {
+    font-size: 1.5em;
+  }
 }
 @media screen and (max-width: 1024px) {
   .highScoreGameTitle {
     font-size: 2.5em !important;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 425px) {
   #display-to-user {
-    width: 75vw;
+    height: 60vh;
   }
 }
 
@@ -310,9 +317,15 @@
   }
 
   .my-btn {
+    font-size: 1em;
+    padding: 10px 40px;
+    margin: 12px 0px;
+  }
+
+  #back-btn {
     font-size: 0.9em;
     padding: 5px 60px;
-    margin: 12px 0px;
+    margin: 58px 0px;
   }
 
   .gamerName-gamerLevel-gamerLives {
@@ -341,9 +354,9 @@
     padding: 0px 30px !important;
   }
 
-  #display-to-user {
+  /* #display-to-user {
     width: 60vw;
-  }
+  } */
 }
 
 @media screen and (min-width: 768px) {
@@ -375,6 +388,12 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .my-btn {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #instructions > p {
     font-size: 1.5em;
   }
 }
