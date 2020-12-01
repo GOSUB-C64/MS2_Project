@@ -133,3 +133,17 @@ The maximum level was initially going to be 20 (just like in the original Simon 
 # TESTING
 
 see [TESTING.md](https://github.com/GOSUB-C64/User-Centric_Project/blob/master/TESTING.md) for all the relevant testing I performed to make sure this project works well.
+
+
+# Credits
+
+Many thanks to ***Menno van der Krift ***[responsive grid code](https://www.youtube.com/watch?v=lbIYGALzP0A&list=PLD-A13pAt_uqsYtnByMWT4I6ItCN1KflS&index=10&t=489s) for his youtube video on how to apply js to my grid so it stays responsive no matter the screen size!
+
+I sourced [this video](https://www.youtube.com/watch?v=uTGRJqn889Q&t=4s) which help alot in my understanding of how to generate an array of non-repeatable items which I used for function generateTileArray() in [main.js](https://github.com/GOSUB-C64/MS2_Project/blob/master/assets/js/main.js)
+go to timestamp 9:44
+
+I must admit it took me a while to understand ***setTimeout*** and ***serInterval*** which has led me to basically understanding a duality of Javascript and how it is asynchronous.
+
+[***setTimeout*** and ***setTimeout*** YouTube Video that really helped](https://www.youtube.com/watch?v=nGfTjA8qNDA)
+
+

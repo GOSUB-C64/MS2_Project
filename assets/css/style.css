@@ -56,7 +56,7 @@
 
 .main-gameTitle {
   text-align: center;
-  padding: 30px;
+  padding: 30px 30px 5px 30px;
   color: rgb(0, 183, 255);
   font-size: 3em;
   letter-spacing: 5px;
@@ -65,9 +65,9 @@
 
 .highScoreGameTitle {
   text-align: center;
-  padding: 30px;
+  padding: 30px 10px;
   color: rgb(0, 183, 255);
-  font-size: 5em;
+  font-size: 1.2em;
   letter-spacing: 5px;
   font-family: "Krona One", sans-serif;
 }
@@ -110,7 +110,7 @@
 }
 
 #instructions p {
-  padding: 8px 0px;
+  padding: 6px 0px;
 }
 
 #highScoreTableHeader {
@@ -276,6 +276,7 @@
   .main-gameTitle {
     font-size: 6em;
     text-align: center;
+    padding-bottom: 70px;
   }
 
   .field {
@@ -293,10 +294,9 @@
   .score > p {
     font-size: 1.5em;
   }
-}
-@media screen and (max-width: 1024px) {
+
   .highScoreGameTitle {
-    font-size: 2.5em !important;
+    font-size: 3.7em;
     text-align: center;
   }
 }
@@ -305,12 +305,28 @@
   #display-to-user {
     height: 60vh;
   }
+
+  .main-gameTitle {
+    font-size: 2.5em !important;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .rank,
+  .name,
+  .score {
+    font-size: 0.75em;
+  }
+  #highScoreTableSubHeader {
+    font-size: 0.75em;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .splash-gameTitle,
   .main-gameTitle {
-    font-size: 2em !important;
+    font-size: 2.5em;
     text-align: center;
   }
 
@@ -342,7 +358,7 @@
 
   .gamerName-gamerLevel-gamerLives {
     font-size: 1em;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .myCol {

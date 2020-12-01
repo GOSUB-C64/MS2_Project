@@ -1,4 +1,6 @@
-// function to keep the grid squares responsive.
+// function to keep the main game grid responsive.
+// found help with this on Youtube - code acreditted in readme.md file.
+
 function responsiveGrid() {
   var width = $(".tile").outerWidth();
   $(".tile").css("height", width);
@@ -14,15 +16,17 @@ $(window).resize(function () {
 
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
-let gameCount = 1; /* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user is successful */
+/* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user has successfully guessed */
+let gameCount = 1; 
 let isClickEnabled = false;
 let noOfClicks = 0;
 let index = 0;
 let runningIndex = 0;
-let max = 2; // target level to reach!
-let lives = 3;
+let max = 16; // target level to reach!
+let remainingLives = 3;
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
+// needed help with how to do this (see credits in readme.md) the magic is in the 'IF' statement :)
 function generateTileArray() {
   let arr = [];
   while (arr.length < 16) {
@@ -36,6 +40,7 @@ function generateTileArray() {
 }
 
 // assign each tile (div) its own color i.e. if tileSeq[0]==1 then  tileSeqCol[0]=="Green"
+// mentor helped here
 function generateTileColourSeq(arr) {
   let nextColour;
   let colourMap = [
@@ -122,7 +127,7 @@ let tileColorSeq = generateTileColourSeq(tileSeq);
 let userName = localStorage.getItem("storageName");
 document.querySelector("#gamerName").innerHTML = userName.toUpperCase();
 document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
-document.querySelector("#gamerLives").innerHTML = lives;
+document.querySelector("#gamerLives").innerHTML = remainingLives;
 
 let intervalID = setInterval(() => {
   alert("GET READY TO PLAY!!");
@@ -158,10 +163,10 @@ $(".tile").click(function () {
       clearTimeout(timeoutID);
     }, 3000);
 
-    lives--;
-    document.querySelector("#gamerLives").innerHTML = lives;
+    remainingLives--;
+    document.querySelector("#gamerLives").innerHTML = remainingLives;
 
-    if (lives > 0 && lives <= 3) {
+    if (remainingLives > 0 && remainingLives <= 3) {
       let timeoutID = setTimeout(() => {
         alert("You've made a mistake and lose a life!");
         alert("Are you ready to continue?");
@@ -169,7 +174,7 @@ $(".tile").click(function () {
       }, 1000);
     }
 
-    if (lives == 0) {
+    if (remainingLives == 0) {
       $(function () {
         $("#playAgainModal").appendTo("body");
       });
@@ -207,7 +212,6 @@ $(".tile").click(function () {
     // if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
     $(function () {
-    //   document.getElementById("playAgainModal").removeEventListener("click");
 
       $("#playAgainModal").appendTo("body");
 
@@ -221,8 +225,6 @@ $(".tile").click(function () {
       );
 
       $("#playAgainModal").modal("show");
-
-      // displayAllTiles();
 
       document
         .getElementById("yesButton")
