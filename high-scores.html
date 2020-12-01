@@ -38,52 +38,57 @@
   <body class="backImage">
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-12">
           <h1 class="highScoreGameTitle">Simon Squares</h1>
         </div>
       </div>
       <div class="row backImage" id="display-to-user">
-        <h5 id="highScoreTableHeader">Top 5 Best Scores</h5>
-        <!-- <hr class="divider" /> -->
-      </div>
-      <div class="container">
-        <div class="row justify-content-center" id="highScoreTableSubHeader">
-          <div class="col col-md-4 field">Rank</div>
-          <div class="col col-md-4 field">Name</div>
-          <div class="col col-md-4 field">Level</div>
-        </div>
-        <!-- <hr class="divider" /> -->
+        <div class="col-12">
+          <h5 id="highScoreTableHeader">Top 5 Best Scores</h5>
+          <div class="row">
+            <div class="col-12">
+              <hr class="firstDivider" />
+              <div id="highScoreTableSubHeader">
+                <div class="col col-md-4 field">Rank</div>
+                <div class="col col-md-4 field">Name</div>
+                <div class="col col-md-4 field">Level</div>
+              </div>
+            </div>
 
-        <div class="row rank">
-          <div class="col col-md-4">
-            <p>1st</p>
-            <p>2nd</p>
-            <p>3rd</p>
-            <p>4th</p>
-            <p>5th</p>
-          </div>
-          <div class="col col-md-4 name">
-            <p id="first"></p>
-            <p id="second"></p>
-            <p id="third"></p>
-            <p id="fourth"></p>
-            <p id="fifth"></p>
-          </div>
-          <div class="col col-md-4 score">
-            <p id="hs1"></p>
-            <p id="hs2"></p>
-            <p id="hs3"></p>
-            <p id="hs4"></p>
-            <p id="hs5"></p>
+            <hr class="secondDivider" />
+
+            <div class="col col-md-4 rank">
+              <p>1st</p>
+              <p>2nd</p>
+              <p>3rd</p>
+              <p>4th</p>
+              <p>5th</p>
+            </div>
+
+            <!-- these 10 id's are used in the javascript code -->
+            <div class="col col-md-4 name">
+              <p id="first"></p>
+              <p id="second"></p>
+              <p id="third"></p>
+              <p id="fourth"></p>
+              <p id="fifth"></p>
+            </div>
+            <div class="col col-md-4 score">
+              <p id="hs1"></p>
+              <p id="hs2"></p>
+              <p id="hs3"></p>
+              <p id="hs4"></p>
+              <p id="hs5"></p>
+            </div>
+            <!-- above id's are used for selectors in the javascript code -->
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 myCenteredContent">
-          <button class="my-btn" id="back-btn">Back</button>
-        </div>
+
+    <div class="row justify-content-center no-gutters">
+      <div class="col myCenteredContent">
+        <button class="my-btn" id="back-btn">Back</button>
       </div>
     </div>
   </body>
