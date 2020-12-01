@@ -96,9 +96,9 @@ function displayAllTiles() {
   }, 300);
 }
 
-// function to display all cells up to gameCount //
+// function to display all cells in current gameCount //
 function displayCurrentSeq() {
-  isClickEnabled = false;
+  isClickEnabled = false; // prevent user from clicking while cpu's turn is active.
   if (index < gameCount) {
     let tileId = "#tile" + tileSeq[index];
     $(tileId).css("background-color", tileColorSeq[index]);
@@ -124,7 +124,9 @@ function acceptUserInput() {
 let tileSeq = generateTileArray();
 let tileColorSeq = generateTileColourSeq(tileSeq);
 
+// got help on stackoverflow for using localStorage (see readme)
 let userName = localStorage.getItem("storageName");
+
 document.querySelector("#gamerName").innerHTML = userName.toUpperCase();
 document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
 document.querySelector("#gamerLives").innerHTML = remainingLives;

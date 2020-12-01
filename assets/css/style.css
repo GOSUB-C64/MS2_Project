@@ -110,7 +110,7 @@
 }
 
 #instructions p {
-  padding: 6px 0px;
+  padding: 3px 0px;
 }
 
 #highScoreTableHeader {
@@ -394,7 +394,7 @@
   .name,
   .score {
     margin-bottom: 15px !important;
-    line-height: 3em;
+    line-height: 1.5em;
   }
 }
 
@@ -415,7 +415,7 @@
     padding-top: 100px;
   }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 992px) {
+@media only screen and (min-width: 768px) and (max-width: 992px) {
   .gamerName-gamerLevel-gamerLives {
     font-size: 1.5em !important;
   }
@@ -425,7 +425,7 @@
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .my-btn {
     font-size: 1.5em;
   }

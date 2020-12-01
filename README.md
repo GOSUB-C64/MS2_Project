@@ -137,13 +137,19 @@ see [TESTING.md](https://github.com/GOSUB-C64/User-Centric_Project/blob/master/T
 
 # Credits
 
-Many thanks to ***Menno van der Krift ***[responsive grid code](https://www.youtube.com/watch?v=lbIYGALzP0A&list=PLD-A13pAt_uqsYtnByMWT4I6ItCN1KflS&index=10&t=489s) for his youtube video on how to apply js to my grid so it stays responsive no matter the screen size!
+Many thanks to ***Menno van der Krift*** [responsive grid code](https://www.youtube.com/watch?v=lbIYGALzP0A&list=PLD-A13pAt_uqsYtnByMWT4I6ItCN1KflS&index=10&t=489s) for his youtube video on how to apply js to my grid so it stays responsive no matter the screen size!
 
 I sourced [this video](https://www.youtube.com/watch?v=uTGRJqn889Q&t=4s) which help alot in my understanding of how to generate an array of non-repeatable items which I used for function generateTileArray() in [main.js](https://github.com/GOSUB-C64/MS2_Project/blob/master/assets/js/main.js)
 go to timestamp 9:44
 
 I must admit it took me a while to understand ***setTimeout*** and ***serInterval*** which has led me to basically understanding a duality of Javascript and how it is asynchronous.
 
-[***setTimeout*** and ***setTimeout*** YouTube Video that really helped](https://www.youtube.com/watch?v=nGfTjA8qNDA)
+[***setTimeout*** and ***setTimeout***](https://www.youtube.com/watch?v=nGfTjA8qNDA) YouTube Video that really helped me in that understanding.
+
+When I captured a name from the player - I needed to figure out how to pass that data from one page to another so I found the answer [here](https://stackoverflow.com/questions/27765666/passing-variable-through-javascript-from-one-html-page-to-another-page) and implemented it into this project.
+
+The only image I used was for the background which was consistent throughout the site - I sourced that from [here](https://www.pexels.com/photo/black-and-white-checkered-illustration-4278784/)
+
+I blurred it slightly using this [online tool](http://blur.imageonline.co/)
 
 
