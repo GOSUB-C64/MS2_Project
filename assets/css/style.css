@@ -49,25 +49,34 @@
   text-align: center;
   padding: 30px;
   color: rgb(0, 183, 255);
-  font-size: 7.5em;
+  font-size: 2.5em;
   letter-spacing: 5px;
   font-family: "Krona One", sans-serif;
 }
 
 .main-gameTitle {
   text-align: center;
-  padding: 30px 30px 5px 30px;
+  padding: 30px 0px 5px 0px;
   color: rgb(0, 183, 255);
-  font-size: 3em;
+  font-size: 2em;
+  letter-spacing: 5px;
+  font-family: "Krona One", sans-serif;
+}
+
+.howToGameTitle {
+  text-align: center;
+  padding: 30px 15px 0px 0px;
+  color: rgb(0, 183, 255);
+  font-size: 2.5em;
   letter-spacing: 5px;
   font-family: "Krona One", sans-serif;
 }
 
 .highScoreGameTitle {
   text-align: center;
-  padding: 30px 10px;
+  padding: 10px 10px;
   color: rgb(0, 183, 255);
-  font-size: 1.2em;
+  font-size: 2.5em;
   letter-spacing: 5px;
   font-family: "Krona One", sans-serif;
 }
@@ -109,6 +118,19 @@
   opacity: 0.6;
 }
 
+#high-score-frame {
+  margin: 0 auto;
+  width: 80vw;
+  height: 60vh;
+  /* background-color: #fff; */
+  font-family: "Krona One", sans-serif;
+  color: rgb(0, 183, 255);
+  text-align: center;
+  border: 4px solid #fff;
+  border-radius: 15px;
+  opacity: 0.6;
+}
+
 #instructions p {
   padding: 3px 0px;
 }
@@ -116,7 +138,7 @@
 #highScoreTableHeader {
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 #highScoreTableSubHeader {
@@ -134,11 +156,10 @@
 
 .score {
   font-size: 1.5em;
-  /* margin: 0 auto; */
 }
 
 #howTo {
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 25px 25px 0px 25px;
 }
 
@@ -168,12 +189,12 @@
 .my-btn {
   font-family: "Krona One", sans-serif;
   color: rgb(255, 255, 255);
-  font-size: 2em;
+  font-size: 1em;
   background-color: rgb(0, 0, 0);
   border: 2px solid #fff;
   border-radius: 15px;
-  padding: 5px 10px 5px 10px;
-  margin: 0px 20px;
+  padding: 3px 50px;
+  margin: 5px 0px;
 }
 
 .my-btn:hover {
@@ -183,7 +204,7 @@
 .inGame-btn {
   font-family: "Krona One", sans-serif;
   color: rgb(0, 183, 255);
-  font-size: 1.5em;
+  font-size: 1em;
   background-color: rgb(0, 0, 0);
   border: 2px solid #fff;
   border-radius: 15px;
@@ -208,12 +229,12 @@
 .gamerName-gamerLevel-gamerLives {
   font-family: "Krona One", sans-serif;
   color: rgb(0, 183, 255);
-  font-size: 2em;
+  font-size: 1em;
   text-align: center;
 }
 
 #back-btn {
-  margin: 40px auto;
+  margin: 15px auto;
 }
 
 .modal-header {
@@ -235,6 +256,7 @@
 .tileGrid {
   display: flex;
   flex-wrap: wrap;
+  padding: 20px 0px;
 }
 
 .tile {
@@ -268,15 +290,81 @@
 /* media queries */
 /*///////////////*/
 
+@media screen and (max-width: 375px) {
+  .rank,
+  .name,
+  .score {
+    font-size: 0.75em;
+  }
+
+  #highScoreTableSubHeader {
+    font-size: 0.75em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #display-to-user {
+    height: 60vh;
+  }
+
+  #instructions > p {
+    font-size: 0.75em !important;
+  }
+
+  .myCol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .playerLabel {
+    text-align: left;
+    flex: 1;
+  }
+
+  #gamerName {
+    /* margin-left: 40px; */
+    flex: 1;
+  }
+
+  #gamerLevel,
+  #gamerLives {
+    flex: 1;
+  }
+
+  .levelLabel,
+  .livesLabel {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #instructions > p {
+    font-size: 0.9em;
+    line-height: 1em;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .my-btn {
-    margin: 5px;
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 12px 10px;
+  }
+
+  #start-btn {
+    margin: 0px;
   }
 
   .main-gameTitle {
-    font-size: 6em;
+    font-size: 4em;
     text-align: center;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
+  }
+
+  .splash-gameTitle {
+    font-size: 7em;
+    text-align: center;
   }
 
   .field {
@@ -295,9 +383,23 @@
     font-size: 1.5em;
   }
 
+  #high-score-frame {
+    height: 70vh;
+  }
+
   .highScoreGameTitle {
-    font-size: 3.7em;
+    font-size: 3em;
     text-align: center;
+  }
+
+  .howToGameTitle {
+    font-size: 4em;
+    padding-bottom: 30px;
+  }
+
+  #howTo {
+    font-size: 2em;
+    padding: 10px 25px 0px 25px;
   }
 
   .allPTags p {
@@ -307,59 +409,29 @@
   #instructions > p {
     font-size: 1em;
   }
-}
 
-@media screen and (max-width: 425px) {
-  #display-to-user {
-    height: 60vh;
+  .myRow {
+    position: relative;
   }
 
-  .main-gameTitle {
-    font-size: 2.5em !important;
-    text-align: center;
+  #gamerLivesText {
+    position: absolute;
+    top: 100px;
+    right: 0px;
   }
 
-  #instructions > p {
-    font-size: 0.75em !important;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .rank,
-  .name,
-  .score {
-    font-size: 0.75em;
-  }
-  #highScoreTableSubHeader {
-    font-size: 0.75em;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .splash-gameTitle,
-  .main-gameTitle {
-    font-size: 2.5em;
-    text-align: center;
+  #highScoreTableHeader {
+    font-size: 1.9em;
   }
 
   .instructions p {
-    font-size: 0.7em;
+    font-size: 1em;
     letter-spacing: 0.2em;
     padding: 5px;
   }
 
   p {
     margin-bottom: 4px !important;
-  }
-
-  #howTo {
-    font-size: 1em;
-  }
-
-  .my-btn {
-    font-size: 1em;
-    padding: 10px 40px;
-    margin: 12px 0px;
   }
 
   #back-btn {
@@ -394,9 +466,13 @@
     padding: 0px 30px !important;
   }
 
-   #highScoreTableHeader {
-    font-size: 1em;
-  } 
+  #display-to-user {
+    height: 45vh;
+  }
+
+  #highScoreTableHeader {
+    font-size: 2em;
+  }
 
   #highScoreTableSubHeader .field {
     padding: 0px;
@@ -408,29 +484,25 @@
     margin-bottom: 15px !important;
     line-height: 1.5em;
   }
-}
 
-@media screen and (min-width: 768px) {
-  .myRow {
-    position: relative;
+  .levelLabel,
+  .livesLabel {
+      margin-top: 0px;
   }
-
-  #gamerLivesText {
-    position: absolute;
-    top: 100px;
-    right: 0px;
-  }
-
-  #highScoreTableHeader {
-    font-size: 1.9em;
 }
 
 @media screen and (min-width: 992px) {
   #gamerLivesText {
     padding-top: 100px;
   }
+
+  .splash-gameTitle {
+    font-size: 8em;
+    text-align: center;
+  }
 }
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .gamerName-gamerLevel-gamerLives {
     font-size: 1.5em !important;
   }
@@ -440,21 +512,176 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .my-btn {
+@media screen and (min-width: 1024px) {
+  .main-gameTitle {
+    font-size: 5.5em;
+  }
+
+  .instructions p {
     font-size: 1.5em;
   }
-}
 
-@media only screen and (min-width: 768px) {
-  #instructions > p {
-    font-size: 0.9em;
-    line-height: 1em;
+  .start {
+    font-size: 1.5em;
+  }
+
+  #instructions p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  .howToGameTitle {
+    font-size: 5em;
+  }
+
+  .gamerName-gamerLevel-gamerLives {
+      font-size: 2em;
+  }
+  #gamerName,
+  #gamerLevel,
+  #gamerLives {
+      font-size: 2em;
   }
 }
 
-@media only screen and (min-width: 2400px) {
+@media screen and (min-width: 1440px) {
+
+  .main-gameTitle {
+    font-size: 8em;
+  }
+
+  .splash-gameTitle {
+    font-size: 10em;
+    text-align: center;
+  }
+
+  .start {
+    font-size: 3em;
+    padding: 100px;
+  }
+
+  .howToGameTitle {
+    font-size: 7em;
+  }
+
+  #instructions p {
+    font-size: 1.5em;
+    line-height: 1.8em;
+  }
+
+  #howTo {
+    font-size: 3em;
+  }
+
+  #back-btn {
+    font-size: 2em;
+    padding: 5px 60px;
+    margin-top: 50px;
+  }
+
+  .highScoreGameTitle {
+    font-size: 6em;
+  }
+
+  #highScoreTableHeader {
+    font-size: 4em;
+  }
+
+  .allPTags p {
+    font-size: 2em;
+    line-height: 2em;
+  }
+
+  #highScoreTableSubHeader {
+    font-size: 1.5em;
+  }
+
+    .gamerName-gamerLevel-gamerLives {
+      font-size: 3em;
+      margin-bottom: 40px;
+  }
+
+  .livesLabel {
+      margin-top: 80px;
+  }
+
+  #gamerName,
+  #gamerLevel,
+  #gamerLives {
+      font-size: 3em;
+  }
+}
+
+@media screen and (min-width: 2560px) {
   #instructions > p {
     font-size: 3em;
+  }
+
+  .main-gameTitle {
+    font-size: 14em;
+  }
+
+  .splash-gameTitle {
+    font-size: 20em;
+  }
+
+  .instructions p {
+    font-size: 3.5em;
+  }
+
+  .my-btn {
+    font-size: 2em;
+    padding: 10px 20px;
+    margin: 12px 0px;
+  }
+
+  .start {
+    padding: 200px 0px;
+  }
+
+  .howToGameTitle {
+    font-size: 12em;
+    padding-bottom: 200px;
+  }
+
+  #instructions p {
+    font-size: 3em;
+    line-height: 2em;
+  }
+
+  #howTo {
+    font-size: 5em;
+  }
+
+  #back-btn {
+    font-size: 4em;
+    padding: 5px 60px;
+    margin-top: 150px;
+  }
+
+  .highScoreGameTitle {
+    font-size: 12em;
+    margin: 100px 0px;
+  }
+
+  #highScoreTableHeader {
+    font-size: 8em;
+  }
+
+  #high-score-frame {
+    height: 60vh;
+  }
+
+  .allPTags p {
+    font-size: 3.5em;
+    line-height: 2em;
+  }
+
+  #highScoreTableSubHeader {
+    font-size: 3em;
+  }
+
+  #back-btn {
+    margin-top: 75px;
   }
 }
