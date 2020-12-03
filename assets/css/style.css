@@ -254,6 +254,8 @@
 }
 
 .tileGrid {
+  display: -ms-flexbox;
+
   display: flex;
   flex-wrap: wrap;
   padding: 20px 0px;
@@ -487,7 +489,7 @@
 
   .levelLabel,
   .livesLabel {
-      margin-top: 0px;
+    margin-top: 0px;
   }
 }
 
@@ -535,21 +537,20 @@
   }
 
   .gamerName-gamerLevel-gamerLives {
-      font-size: 2em;
+    font-size: 2em;
   }
   #gamerName,
   #gamerLevel,
   #gamerLives {
-      font-size: 2em;
+    font-size: 2em;
   }
-  
+
   #display-to-user {
-      height: 50vh;
+    height: 50vh;
   }
 }
 
 @media screen and (min-width: 1440px) {
-
   .main-gameTitle {
     font-size: 8em;
   }
@@ -600,19 +601,19 @@
     font-size: 1.5em;
   }
 
-    .gamerName-gamerLevel-gamerLives {
-      font-size: 3em;
-      margin-bottom: 40px;
+  .gamerName-gamerLevel-gamerLives {
+    font-size: 3em;
+    margin-bottom: 40px;
   }
 
   .livesLabel {
-      margin-top: 80px;
+    margin-top: 80px;
   }
 
   #gamerName,
   #gamerLevel,
   #gamerLives {
-      font-size: 3em;
+    font-size: 3em;
   }
 }
 
