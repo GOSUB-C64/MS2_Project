@@ -24,6 +24,7 @@ let index = 0;
 let runningIndex = 0;
 let max = 16; // target level to reach!
 let remainingLives = 3;
+let tileId;
 
 // generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
 // needed help with how to do this (see credits in readme.md) the magic is in the 'IF' statement :)
@@ -79,21 +80,9 @@ function clearAllTiles() {
 }
 
 function displayGuess(tile) {
-  Id = "#tile" + tile;
+  let Id = "#tile" + tile;
   let a = tileSeq.indexOf(tile);
   $(Id).css("background-color", tileColorSeq[a]);
-}
-
-function displayAllTiles() {
-  let i = 0;
-  let tileId = "#tile" + tileSeq[i];
-  $(tileId).css("background-color", tileColorSeq[index]);
-  let intervalID = setInterval(() => {
-    $(tileId).css("background-color", "#000");
-    i++;
-    displayAllTiles();
-    clearInterval(intervalID);
-  }, 300);
 }
 
 // function to display all cells in current gameCount //
@@ -144,7 +133,7 @@ $(".tile").click(function () {
   if (noOfClicks <= gameCount) {
     // build the ID of which of the 16 elements (divs) was clicked
     tileIdString = $(this).attr("id");
-    tileId = parseInt(tileIdString.split("tile")[1]);
+    let tileId = parseInt(tileIdString.split("tile")[1]);
     answerSeq.push(tileId);
     // display users guess to screen grid
     displayGuess(tileId);
