@@ -14,3 +14,14 @@
 
 [WC3 CSS online Validator](https://jigsaw.w3.org/css-validator/validator)
 
+## JavaScript Validator
+
+* index.js  - *PASS*
+* main.js - *PASS*
+* instructions.js - *PASS*
+* high-scores.js - *PASS*
+
+I used [JShint](https://jshint.com/) to validate all JavaScript code I wrote/used with nothing major to report.
+
+**All validators located at the links provided above accepted code copied from my project and pasted into the relevant window**
+

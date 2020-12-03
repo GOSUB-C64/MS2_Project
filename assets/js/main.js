@@ -89,7 +89,7 @@ function displayGuess(tile) {
 function displayCurrentSeq() {
   isClickEnabled = false; // prevent user from clicking while cpu's turn is active.
   if (index < gameCount) {
-    let tileId = "#tile" + tileSeq[index];
+    tileId = "#tile" + tileSeq[index];
     $(tileId).css("background-color", tileColorSeq[index]);
     let intervalID = setInterval(() => {
       $(tileId).css("background-color", "#000");
@@ -133,7 +133,7 @@ $(".tile").click(function () {
   if (noOfClicks <= gameCount) {
     // build the ID of which of the 16 elements (divs) was clicked
     tileIdString = $(this).attr("id");
-    let tileId = parseInt(tileIdString.split("tile")[1]);
+    tileId = parseInt(tileIdString.split("tile")[1]);
     answerSeq.push(tileId);
     // display users guess to screen grid
     displayGuess(tileId);
