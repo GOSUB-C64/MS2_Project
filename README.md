@@ -79,11 +79,11 @@ Only if the user is correct do the levels increase.
 
 The maximum level was initially going to be 20 (just like in the original Simon game) but because I didnt want the cpu to pick any repeatable numbers AND there are only 16 grid-squares, the maximum level to beat is set at 16 only although this can be changed with the code so that any repeated random numbers between 1 and 16 aren't checked.
 
-## ***User Stories***
+# ***User Stories***
 
 1. As a new player of this game I would like to know how to play it. A clear indication of the instructions would need to be obvious.
 
-2. As a player wanting to jump straight in and play, the ability to actively play should be on the main screen that the user/player is greeted with when accessing the site.
+2. As a player wanting to jump straight in and play, the ability to immediately play should be on the main screen that the user/player is greeted with when accessing the site.
 
 3. As a player I would like to enter my name and see it on the gameplay screen.
 
@@ -102,7 +102,7 @@ The maximum level was initially going to be 20 (just like in the original Simon 
 10. As a player advancing through the levels, an indication of how the player is doing would need to be displayed and incremented accordingly.
 
 
-## Features
+# Features
 
 **HIGH SCORE TABLE** - If the player does well in the game they can have their score recorded in the high-score table and later view their success in the high-score table provided via the ***'high-score table'*** button in the welcome screen.
 
@@ -112,7 +112,7 @@ The maximum level was initially going to be 20 (just like in the original Simon 
 
 **LEVEL INDICATOR** - to track users' progress.
 
-## Features to be added at a later time
+# Features to be added at a later time
 
 **A GOOGLE MAP** - to locate other players who are recorded in the high-score table.
 
@@ -134,7 +134,35 @@ The maximum level was initially going to be 20 (just like in the original Simon 
 
 see [TESTING.md](https://github.com/GOSUB-C64/User-Centric_Project/blob/master/TESTING.md) for all the relevant testing I performed to make sure this project works well.
 
+#
 
+# Deployment
+
+## Deploy to GitHub pages
+
+1. In the Github repository find and click on **settings**
+
+2. Locate **github pages** by scrolling the settings page
+
+3. Select **Master Branch** via the **Source** drop down
+
+4. After a quick refresh go back to the **github pages** section
+
+5. Your site is now deployed 'live' and you can use the generated url to find it
+
+#
+
+## Deploy Locally
+
+1. Go to your browser's add on store for FireFox or extensions for Chrome
+
+2. find and install **Gitpod**
+
+3. In the Github repository find and click the **gitpod** button
+
+4. The repository will download and open in **Gitpod** IDE
+
+#
 # Credits
 
 Many thanks to ***Menno van der Krift*** [responsive grid code](https://www.youtube.com/watch?v=lbIYGALzP0A&list=PLD-A13pAt_uqsYtnByMWT4I6ItCN1KflS&index=10&t=489s) for his youtube video on how to apply js to my grid so it stays responsive no matter the screen size!
@@ -152,4 +180,12 @@ The only image I used was for the background which was consistent throughout the
 
 I blurred it slightly using this [online tool](http://blur.imageonline.co/)
 
+# Acknowledgements
 
+* I would like to take this opportunity to thank Akshat Garg (Mentor at Code Institute). He was awesome from the start. He displayed patience, insight and his guidance was most welcome to a newbie like me.
+
+* Also Mr Bim Williams (Code Institute Alumnus) for taking the time to cut thru the confusion of Javascript arrays and setTimeout/setInterval - Thanks Bim!
+
+# Disclaimer
+
+* This game project was designed solely for educational reasons.
