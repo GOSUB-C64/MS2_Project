@@ -17,16 +17,16 @@ $(window).resize(function () {
 let tileIdString;
 let answerSeq = []; // holds users guess for comparison later
 /* game starts at 1 grid square(tile) toggling on/off then increments by 1 each time the user has successfully guessed */
-let gameCount = 1; 
+let gameCount = 1; // game starts with 1 square then increments
 let isClickEnabled = false;
-let noOfClicks = 0;
+let noOfClicks = 0; // keep track of users' clicks
 let index = 0;
-let runningIndex = 0;
+let runningIndex = 0; // used to display sequence
 let max = 16; // target level to reach!
 let remainingLives = 3;
-let tileId;
+let tileId; // store ID's of grid squares(tiles/divs)
 
-// generate array 16 non-repeatable random nos (0-15) representing the 4x4 grid
+// generate array of 16 non-repeatable random nos (0-15) representing the 4x4 grid
 // needed help with how to do this (see credits in readme.md) the magic is in the 'IF' statement :)
 function generateTileArray() {
   let arr = [];
@@ -78,14 +78,15 @@ function clearAllTiles() {
     $(Id).css("background-color", "#000");
   }
 }
-
+// display player's guess
 function displayGuess(tile) {
   let Id = "#tile" + tile;
   let a = tileSeq.indexOf(tile);
   $(Id).css("background-color", tileColorSeq[a]);
 }
 
-// function to display all cells in current gameCount //
+// display all cells in current gameCount //
+// cpu's turn
 function displayCurrentSeq() {
   isClickEnabled = false; // prevent user from clicking while cpu's turn is active.
   if (index < gameCount) {
@@ -98,6 +99,7 @@ function displayCurrentSeq() {
       clearInterval(intervalID);
     }, 1000);
   } else {
+    // player's turn
     index = 0;
     acceptUserInput();
   }
@@ -143,7 +145,9 @@ $(".tile").click(function () {
       clearTimeout(intervalID);
     }, 500);
   }
-  // if currently clicked tile doesnt equal the one that the array index is pointing at, then stop and game over
+  // If currently clicked tile doesn't equal 
+  // the one that the array index is pointing at, 
+  // then stop and lose a life / Game Over.
   if (tileId !== tileSeq[noOfClicks - 1]) {
     noOfClicks = 0;
     runningIndex = 0;
@@ -156,7 +160,7 @@ $(".tile").click(function () {
 
     remainingLives--;
     document.querySelector("#gamerLives").innerHTML = remainingLives;
-
+    // Lose a life
     if (remainingLives > 0 && remainingLives <= 3) {
       let timeoutID = setTimeout(() => {
         alert("You've made a mistake and lose a life!");
@@ -164,7 +168,7 @@ $(".tile").click(function () {
         clearTimeout(timeoutID);
       }, 1000);
     }
-
+    // Game Over
     if (remainingLives == 0) {
       $(function () {
         $("#playAgainModal").appendTo("body");
@@ -182,8 +186,6 @@ $(".tile").click(function () {
         $("#playAgainModal").modal("show");
       }, 500);
 
-    //   displayAllTiles();
-
       document
         .getElementById("yesButton")
         .addEventListener("click", function () {
@@ -200,7 +202,7 @@ $(".tile").click(function () {
       clearInterval(intervalID);
     }, 2000);
 
-    // if max gameCount is reached then there must be a winner.
+    // Game Won - if max gameCount is reached then there must be a winner.
   } else if (noOfClicks === gameCount && gameCount === max) {
     $(function () {
 
@@ -239,12 +241,15 @@ $(".tile").click(function () {
     tileId = 0;
 
     
-    // if all guesses equals the current game count  which is the maximum reached then add another tile and restart sequence
+    // if all guesses equals the current
+    // game count  which is the maximum reached 
+    // then add another tile and restart sequence
   } else if (noOfClicks === gameCount) {
     noOfClicks = 0;
     gameCount++; // increment game level (add 1 more tile)
     runningIndex = 0;
 
+  // tidy up level display to user
     if (gameCount < 10) {
       document.querySelector("#gamerLevel").innerHTML = "0" + gameCount;
     } else {
@@ -256,6 +261,7 @@ $(".tile").click(function () {
       clearInterval(intervalID);
     }, 2000);
   }
+  // check user's guess against cpu's
   if (tileId === tileSeq[runningIndex]) {
     runningIndex++;
   }

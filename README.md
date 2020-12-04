@@ -12,6 +12,9 @@ The use of a wireframing program [(Balsamiq)](https://balsamiq.com/wireframes/go
 [Googlefonts](https://fonts.google.com/) was used to add character and flavour to the overall 'feel' of the site/game.
 
 I also needed small sized icons to be displayed on the browser tabs of this game site. I did this using a free tool online called [Favicon Generator](https://favicon.io/)
+and inserted the code to run on my site.
+
+The Modals I used were from the Bootstrap website with all the HTML code and JS used to get them working.
 
 ## Strategy
 The design strategy for this project ...
@@ -238,6 +241,8 @@ When I captured a name from the player - I needed to figure out how to pass that
 The only image I used was for the background which was consistent throughout the site - I sourced that from [here](https://www.pexels.com/photo/black-and-white-checkered-illustration-4278784/)
 
 I blurred it slightly using this [online tool](http://blur.imageonline.co/)
+
+
 
 # Acknowledgements
 
