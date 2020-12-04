@@ -104,13 +104,71 @@ The maximum level was initially going to be 20 (just like in the original Simon 
 
 # Features
 
-**HIGH SCORE TABLE** - If the player does well in the game they can have their score recorded in the high-score table and later view their success in the high-score table provided via the ***'high-score table'*** button in the welcome screen.
+**HIGH SCORE TABLE** - If the player does well in the game they can have their score recorded in the high-score table and later view their success in the high-score table provided via the ***'high-score table'*** button on the welcome screen.
 
 **HOW TO PLAY** - Instructions for the first-time player.
 
 **LIFE COUNTER** - to keep player informed of remaining lives.
 
 **LEVEL INDICATOR** - to track users' progress.
+
+# Navigation
+
+Navigating Simon Squares is quite easy as there are only 4 pages.
+
+* page 1 - index.html
+
+  * This is the 1st page that greets the player and is where the main title is largely displayed. 
+    Also from here the player can navigate to read 'how to play' the game, check out the high-scores
+    and jump straight in and have a game!
+
+* page 2 - main.html
+
+    * Upon clicking, the user/player is asked for their name and is taken to where the game-play takes place.
+      The player is then asked if they are ready via an alert. 
+      
+    *  On this screen is the game grid of 4x4 equally sized divs,
+       the players name at the left of the grid and the level indicator 
+       and remaining lives on the right.
+
+       * The level indicator increases by 1 (in real-time) when the players' guesses
+         match that of the cpu's which is stored in the <code>tileSeq[]</code>
+      
+    *  The player loses a life when they input an incorrect guess.
+
+        * An incorrect guess is when the players guess doesn't match 
+      the sequence that the cpu generated and displayed to the user earlier.
+
+        * The game ends when the player loses all 3 lives and this is updated in real-time.
+
+            * A modal pops up to ask the user to play again and
+              displays the level they reached.
+
+    * When the game is over, the player has the choice of playing again or
+      returning to the start screen.(index.html)
+
+* page 3 - instructions.html
+
+    * A basic How-To simply explaining how to play 
+      framed in a border to draw the eye in.
+
+    * A back button is present to return to the starting 
+      screen. (index.html) I initially put in a timer 
+      here but I felt it was a bit too constricting and 
+      puts pressure on the user/player to read fast.
+
+* page 4 - high-scores.html
+
+    * Upon arriving, the player can check out the top 5 
+    high scores. A high score in this case is recorded 
+    by which level was reached. 
+
+        * There are a max of 16 levels.
+
+    * A back button is present to return to the starting 
+      screen. (index.html)
+
+
 
 # Features to be added at a later time
 
@@ -160,8 +218,9 @@ see [TESTING.md](https://github.com/GOSUB-C64/User-Centric_Project/blob/master/T
 
 3. In the Github repository find and click the **gitpod** button
 
-4. The repository will download and open in **Gitpod** IDE
+4. The repository will download and load into **Gitpod** IDE
 
+5. Open a terminal and type <code>**python3 -m http.server**</code> to open a port to the browser.
 #
 # Credits
 
